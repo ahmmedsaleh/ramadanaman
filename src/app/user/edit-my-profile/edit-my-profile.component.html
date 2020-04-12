@@ -1,0 +1,206 @@
+<app-upperbar></app-upperbar>
+<app-u-navbar></app-u-navbar>
+
+<!--start edit my profile-->
+<div class="edit-profile">
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+              <h3>EDIT MY PROFILE</h3>
+              <div class="close" (click)="goback()">
+                  <span>x</span>
+              </div>
+            </div>
+            <form>
+                <div class="card-body">
+                    <table class="table table-bordered"> 
+                        <tr>
+                            <td class="title">Full Name</td>
+                            <td class="data">
+                                <!-- full name in inglish-->
+                                <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                <div class="guide-en-message">Enter Full Name In English</div>
+                                <div class="fullname">
+                                    <div class="row">
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="StNameEn"  
+                                                [(ngModel)] = "EditMyProfile.StNameEn"
+                                                class="form-control" 
+                                                placeholder="First name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="EdNameEn"  
+                                                [(ngModel)] = "EditMyProfile.EdNameEn"
+                                                class="form-control" 
+                                                placeholder="Second name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="RdNameEn"  
+                                                [(ngModel)] = "EditMyProfile.RdNameEn"
+                                                class="form-control" 
+                                                placeholder="Third name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="ThameEn"  
+                                                [(ngModel)] = "EditMyProfile.ThameEn"
+                                                class="form-control" 
+                                                placeholder="Last name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--full name in arabic-->
+                                <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                <div class="guide-ar-message">Enter Full Name In Arabic</div>
+                                <div class="fullname">
+                                    <div class="row">
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="StNameAr"  
+                                                [(ngModel)] = "EditMyProfile.StNameAr"
+                                                class="form-control" 
+                                                placeholder="First name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="EdNameAr"  
+                                                [(ngModel)] = "EditMyProfile.EdNameAr"
+                                                class="form-control" 
+                                                placeholder="Second name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="RdNameAr"  
+                                                [(ngModel)] = "EditMyProfile.RdNameAr"
+                                                class="form-control" 
+                                                placeholder="Third name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="ThameAr"  
+                                                [(ngModel)] = "EditMyProfile.ThameAr"
+                                                class="form-control" 
+                                                placeholder="Last name">
+                                        </div>
+                                    </div>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Email</td>
+                            <td class="data">
+                                <input 
+                                    type="email" 
+                                    class="form-control email" 
+                                    name="Email"  
+                                    [(ngModel)] = "EditMyProfile.Email"
+                                    placeholder="Enter Email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Password</td>
+                            <td class="data">                           
+                                <input 
+                                    type="password" 
+                                    class="form-control password" 
+                                    name="Password"  
+                                    [(ngModel)] = "EditMyProfile.Password"
+                                    placeholder="Enter The Password">
+                                <i class="show-pass fa fa-eye fa-2x"></i>                          
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Phone Number</td>
+                            <td class="data">
+                                <input 
+                                    type="text" 
+                                    class="form-control phoneNom" 
+                                    name="Phone"  
+                                    [(ngModel)] = "EditMyProfile.Phone"
+                                    placeholder="Enter Phone Number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Date Of Birth</td>
+                            <td class="data">
+                                <input 
+                                    type="date" 
+                                    class="form-control day-of-birth" 
+                                    name="BirthDate"  
+                                    [(ngModel)] = "EditMyProfile.BirthDate"
+                                    placeholder="Enter Date Of Birth">
+                            </td>
+                        </tr>
+                       
+                        <tr>
+                            <td class="title">Gender</td>
+                            <td class="data">
+                                <div class="gender">
+                                    <input  
+                                        type="radio" 
+                                        id="Emale" 
+                                        name="gender" 
+                                        value="male" 
+                                        (change)="radioGenderChangeHandeler($event)">
+                                    <label for="male">Male</label>
+                                    <input  
+                                        type="radio" 
+                                        id="Efemale" 
+                                        name="gender" 
+                                        value="female" 
+                                        (change)="radioGenderChangeHandeler($event)">
+                                    <label for="female">female</label> 
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Nationality</td>
+                            <td class="data">
+                                <select class="form-control nationality" name = "Nationality" [(ngModel)] = "EditMyProfile.Nationality">
+                                    <option disabled [ngValue]="null">-- Nationality --</option>
+                                    <option  *ngFor = " let nationality of Nationalities" [ngValue]="nationality.id">{{nationality.name}}</option>
+                                </select>
+                            </td>
+                        <!-- </tr>
+                        <tr>
+                            <td class="title">Country</td>
+                            <td class="data">
+                                <select class="form-control country">
+                                    <option>-- Country --</option>
+                                </select>
+                            </td>
+                        </tr> -->
+                    </table>
+                  
+                </div>
+                <div class="card-footer text-muted">
+                    <button class='btn btn-primary save-button' (click)="showww()"><i class="far fa-save"></i>Save</button>
+                </div>
+            </form>
+         
+        </div>
+    </div>
+</div>
+<!--end edit my profile-->
+
+
+
+
+<!--start footer-->
+<app-footer></app-footer>
+<!--end footer-->
+
+<!--strat copyright-->
+<app-u-copyright></app-u-copyright>
+<!--end copyright-->

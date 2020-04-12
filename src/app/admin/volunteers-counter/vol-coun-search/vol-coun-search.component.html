@@ -1,0 +1,26 @@
+<div class="search">
+    <form method="POST"  action="#">
+        <div>
+            <span>
+                <select name="Day" class="search-select" [(ngModel)] = "VolCounSearchResult.Day" required>
+                    <option disabled [ngValue]="null"> -- Day --</option>
+                    <option *ngFor = " let day of Dayes" [ngValue]="day">{{day}} &nbsp;Ramadan</option>
+                    
+                </select>
+            </span> 
+            <span *ngIf="OrgAdmins">
+                <select name="Country" class="search-select" (change)="selectChangeHandler($event)">
+                    <option disabled [ngValue]="null" selected> -- Country --</option>
+                    <option *ngFor = " let country of Countries;let i=index" [value]="country.id">{{country.name_en}}</option>
+                </select>
+            </span>
+            <span>
+                <select name="City" class="search-select" >
+                    <option disabled [ngValue]="null" selected> -- City --</option>
+                    <option *ngFor = " let city of Cities;let i=index" [value]="city.id">{{city.name_en}}</option>
+                </select>
+            </span>
+            <button  type="submit" class="btn search-button" (click)="showww()"> Serach</button>
+        </div>
+    </form>
+</div>

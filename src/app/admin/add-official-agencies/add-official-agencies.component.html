@@ -1,0 +1,97 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>ADD NEW AGANCEY</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div> 
+                        <form [formGroup]="AddAgancyForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select 
+                                                    class="form-control" 
+                                                    name = "country_id" 
+                                                    formControlName="country_id"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.country_id.errors }">
+                                                    <option disabled [ngValue]="null">-- Country --</option>
+                                                    <option  *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name_en}}</option>
+                                                </select>
+                                                <div *ngIf="submitted && f.country_id.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.country_id.errors.required">Country is required</div>
+                                                </div>   
+                                            </div>
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Agancy Name</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <div class="english">
+                                                    <label class="refer">
+                                                        <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control" 
+                                                        name="name_en" 
+                                                        formControlName="name_en"
+                                                        [ngClass]="{ 'is-invalid': submitted && f.name_en.errors }"
+                                                        placeholder="Enter The Name In English">
+                                                    <div *ngIf="submitted && f.name_en.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.name_en.errors.required">Name is required</div>
+                                                        <div *ngIf="f.name_en.errors.minlength">Name must be at least 3 characters</div>
+                                                    </div>      
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="arabic">
+                                                    <label class="refer">
+                                                        <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control" 
+                                                        name="name_ar" 
+                                                        formControlName="name_ar"
+                                                        [ngClass]="{ 'is-invalid': submitted && f.name_ar.errors }"
+                                                        placeholder="Enter The Name In Arabic">
+                                                    <div *ngIf="submitted && f.name_ar.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.name_ar.errors.required">Name is required</div>
+                                                        <div *ngIf="f.name_ar.errors.minlength">Name must be at least 3 characters</div>
+                                                    </div>        
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary add-button' ><i class="fas fa-plus"></i>Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

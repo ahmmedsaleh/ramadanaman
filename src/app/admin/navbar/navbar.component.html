@@ -1,0 +1,50 @@
+<!-- navbar-->
+<header id="header" class="header">
+    <div class="row">
+        <div class="col">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <div class="col">
+            <div class="control">
+                <ul class="navbar-nav text-right right admin-log">  
+                    <li class="nav-item dropdown text-right">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ahmed
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <!-- when click edit go to members.php and assigned $do = Edit and userid = $SESSION['ID'] that = $row['UserID'] that get it from database -->
+                          <a class="dropdown-item" href="#" routerLink='/AdminMyProfile'>My profile</a>
+                            <a class="dropdown-item" href="#" routerLink='/UserPrivileges'>User Settings</a>
+                            <a class="dropdown-item" href="#" (click)="logout()">Sign Out</a>
+                           
+                      </div>
+                    </li>
+                </ul> 
+                <div class="site-view">
+                    <div class="dropdown notification">
+                        <a style="height: 21px;" class="" title="Site View" target="_blank" href="" routerLink='/Intro'>
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lang">
+                    <div class="en">
+                        <a href="#">
+                            <img src="../../../assets/images/en.jpg" width="25px" height="20px" alt="lang">
+                            <span>EN</span> 
+                        </a>
+                    </div>
+                    <div class="ar">
+                        <a href="#">
+                            <img src="" alt="lang">
+                            <span>AR</span> 
+                        </a>
+                    </div> 
+                </div>
+            </div> 
+        </div>
+    </div>
+</header>
+<!-- navbar-->

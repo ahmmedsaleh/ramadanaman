@@ -1,0 +1,24 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+
+
+.main-table{
+    tr{
+        .location{
+            width: 40%;
+        }
+        .volunteers{
+            width: 18%;
+        }
+        .present{
+            width: 12%;
+        }
+        .absent{
+            width: 12%;
+        }
+        .options{
+            width: 18%;
+        }
+    }
+}
+

@@ -1,0 +1,104 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>Add a New User</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="title">User Name</td>
+                                    <td class="data">
+                                        <form>
+                                            <input type="text" name="username" class="form-control" placeholder="Enter The User Name">
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Password</td>
+                                    <td class="data">
+                                        <form>
+                                            <input type="password" class="form-control password" name="password" placeholder="Enter The Password">
+                                            <i class="show-pass fa fa-eye fa-2x"></i>
+                                        </form>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Full Name</td>
+                                    <td class="data">
+                                        <form>
+                                            <input type="text" name="fullname" class="form-control" placeholder="Enter The Full Name">
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Email</td>
+                                    <td class="data">
+                                        <form>
+                                            <input type="email" name="email" class="form-control" placeholder="Enter Valid Email">
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Type</td>
+                                    <td class="data">
+                                        
+                                        <select class="type-of-user">
+                                            <option>Select Type Of User</option>
+                                            <option>Site Manager</option>
+                                            <option>Country Supervisor</option>
+                                            <option>City Supervisor</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Country</td>
+                                    <td class="data">
+                                       <select class="form-control" name = "Country" [(ngModel)] = "AddNewUser.Country">
+                                            <option disabled [ngValue]="null">-- Country --</option>
+                                            <option  *ngFor = " let Country of Countries" [ngValue]="Country.id">{{Country.name_en}}</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Active</td>
+                                    <td class="data">
+                                        <form class="status">
+                                            <input  type="radio" id="male" name="status" value="yes">
+                                            <label for="yes">Yes</label>
+                                            <input  type="radio" id="female" name="status" value="no">
+                                            <label for="no">No</label> 
+                                        </form>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                          
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a href="#" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,67 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <a href='#'  class='btn btn-primary print-botton'><i class="fas fa-print"></i>Print</a>
+                    <app-att-palce-search></app-att-palce-search>
+                    <div class="vol-rep-table">
+                        <div class="table-responsive">
+                            <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                                <tr>
+                                    <td class="place">Place Name</td>
+                                    <td class="country" *ngIf="OrgAdmins">Country</td>
+                                    <td class="city">City</td>
+                                    <td class="required">Person Required</td>
+                                    <td class="volunteers">Volunteers Count</td>
+                                    <td class="present">Present</td>
+                                    <td class="absent">Absent</td>
+                                </tr>
+                                   <tr>
+                                        <td>
+                                            <div class="fullLocation">
+                                                <h4 class="h4-intable">Dubi City Mall </h4>
+                                            </div>
+                                            <a href="#" class="locMap">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </a>
+                                        </td>
+                                        <td *ngIf="OrgAdmins">
+                                            <span>United Arab Emirates</span>
+                                        </td>
+                                        <td>
+                                            <span>Dubi</span>
+                                        </td>
+                                        <td>
+                                            <span>100</span>
+                                        </td>
+                                        <td>
+                                            <span>50</span>
+                                        </td>
+                                        <td>
+                                            <span>50</span>
+                                        </td>
+                                        <td>
+                                            <span>50</span>
+                                        </td>
+                                  </tr>		
+                            </table>
+                        </div>
+                        <a href="#" class='btn btn-primary exbut'><i class="fas fa-download"></i>Export</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

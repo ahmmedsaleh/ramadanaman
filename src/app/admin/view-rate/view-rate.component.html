@@ -1,0 +1,55 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                   
+                    <app-view-search></app-view-search>
+                    <div class="vol-rep-table">
+                        <div class="table-responsive">
+                            <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                                <tr>
+                                    <td class="Name">Name</td>
+                                    <td class="phone">Phone</td>
+                                    <td class="date">Date</td>
+                                    <td class="notes">Notes</td>
+                                </tr>
+                                <!--table data-->
+
+
+                                <tr *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">
+                                    <td> 
+                                        <h4 class="h4-intable">{{item.name}} </h4>
+                                    </td>
+                                    <td>
+                                        <span>{{item.mobile}}</span>
+                                    </td>
+                                    <td>
+                                        <span>{{item.date}}</span>
+                                    </td>
+                                    <td>
+                                        <p >{{item.note}} </p>
+                                    </td>
+                                </tr>  
+                            </table>
+                            <div class="pagenation">
+                                <pagination-controls  (pageChange)="p = $event"></pagination-controls>	
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

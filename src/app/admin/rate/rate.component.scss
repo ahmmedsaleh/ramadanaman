@@ -1,0 +1,30 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+.container{
+    .table{
+        tr{
+            .how{
+                width: 50%;
+                text-align: left;
+               
+            }
+            .n-o-rating{
+                width: 20%;
+                
+            }
+            .pre{
+                width: 10%;
+
+            }
+            .who{
+                width: 20%;
+            }
+            .how-rate{
+                text-align: left;
+                
+            }
+            
+            
+        }
+    }
+}

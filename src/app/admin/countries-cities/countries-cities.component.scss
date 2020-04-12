@@ -1,0 +1,92 @@
+@import "../../../styles.scss";
+@import "../volunteers-report/volunteers-report.component.scss";
+
+// .dashboard-container{
+//     overflow: hidden;
+//     .side-bar{
+//         margin: 0;
+//         padding: 0;
+//         max-width: 280px;
+//     }
+//     .right-content{
+//         margin: 0;
+//         padding: 0;
+//         min-width: 1095px;
+//         max-width: 1095px; 
+//     }
+// }    
+.container{
+    .table{
+        overflow: hidden;
+        .diss{
+            background-color: #fa983a;
+        }
+        .check{
+            width: 5%;
+        }
+        .location{
+            width: 80%;
+        }
+        .option{
+            width: 10%;
+        }
+        .country{
+            .count-head{
+                display: block;
+                cursor: pointer;
+                margin-bottom: 15px;
+                .c-name{
+                    float: left;
+                    i{
+                        display: inline-block;
+                        font-size: 20px;
+                        margin-right: 5px;
+                    }
+                    .parent-h{
+                        display: inline-block;
+                        font-size: 20px;
+                    }
+                }
+                .c-status{
+                    .diss{
+                        background-color: #fa983a;
+                    }
+                }  
+            }
+            .citiess{
+                width: 86%;
+                margin: 0 40px; 
+                display: none;
+                li{
+                    padding: 8px 10px;
+                    list-style: none;
+                    h6{
+                        font-size: 14px;
+                        display: inline-block;
+                        color: $tableRowColor;
+                    }
+                    i{
+                        margin-right: 3px;
+                        color: $tableRowColor;
+                        font-size: 11px;
+                    }  
+                }
+                .clildren-hr{
+                    text-align: center;
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+            
+        }
+    }
+}
+.showww{
+    display: block!important;
+}
+
+
+
+// .show-drop-down{
+//     display: block!important;
+// }

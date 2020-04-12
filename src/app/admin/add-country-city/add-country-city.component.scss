@@ -1,0 +1,46 @@
+@import "../edit-country-city/edit-country-city.component.scss";
+
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    .data{
+                        .chooseImage{
+                            width: 0.1px;
+                            height: 0.1px;
+                            opacity: 0;
+                            overflow: hidden;
+                            position: absolute;
+                            z-index: -1;
+                            cursor: pointer;
+                            &:focus + label {
+                                background-color: #9980FA;
+                            }
+                        }
+                        .choose {
+                            color: white;
+                            padding: 8px 30px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            background-color: #5758BB;
+                            display: inline-block;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #9980FA;
+                            }
+                            i{
+                                margin-right: 4px;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        } 
+    }
+
+}
+
+

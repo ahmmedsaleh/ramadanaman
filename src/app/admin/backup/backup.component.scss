@@ -1,0 +1,89 @@
+@import "../city-supervisors/city-supervisors.component.scss";
+
+.container{
+    .card{
+        margin: 0;
+        .card-header{
+            padding: 5px 10px;
+            background-color: #333;
+            color: #FFF;
+            button{
+                color: #FFF;
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+        .card-body{
+            background-color: #EEE;
+            padding: 40px 20px;
+            .info{
+                font-size: 14px;
+                margin-bottom: 10px;
+                font-weight: 500;
+            }
+            .note{
+                font-size: 14px;
+                color: #ff3f34;
+                font-weight: 500;
+            }
+            .top-add-button{
+                float: right;
+                font-size: 14px;
+                padding: 7px 15px;
+            }
+            .chooseImage{
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+                cursor: pointer;
+                &:focus + label {
+                    background-color: #9980FA;
+                }
+            }
+            .uploade-image {
+                color: white;
+                padding: 8px 24px;
+                font-size: 14px;
+                font-weight: 500;
+                background-color: #5758BB;
+                display: inline-block;
+                margin-left: 25px;
+                cursor: pointer;
+                float: right;
+                margin-right: 12px;
+                &:hover {
+                    background-color: #9980FA;
+                }
+                i{
+                    margin-right: 4px;
+                }
+            }
+            .previous{
+                color: #27ae60;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            .table{
+               
+                tr{
+                    .link{
+                        width: 60%;
+                    }
+                    .date{
+                        width: 15%;
+                    }
+                    .option{
+                        width: 25%;
+                    }
+                    .back-link{
+                        color:  $tableRowColor;
+                    }
+                   
+                }  
+            }
+        }
+    }
+}

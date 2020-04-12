@@ -1,0 +1,146 @@
+@import "../../../styles.scss";
+
+
+
+
+//start side bar
+aside.left-panel {
+    background: $sideBarBg ;
+    min-height: 100%;
+    padding: 0;
+    vertical-align: top;
+    width: $sideBarWidth;
+    transition: width 0.3s ease;
+    .navbar {
+        border-radius: 0;
+        border: none;
+        display: block;
+        margin: 0 ;
+        padding: 0;
+       .navbar-header {
+            float: none;
+            width: 100%;
+            background-color: $sideBarNavBarBg;
+            padding: 15px 20px;
+            h3{
+                font-size: $sideBarNavBar-H-SIze;
+                font-weight: bold;
+            }
+            a{
+                color: #FFF;
+            }
+        }
+        .today-date{
+            background-color: $dateBg;
+            padding: 2px 20px;
+            h4{
+                color: $dateColor;
+                font-size: $date-Fsize;
+            }
+        }
+        .main-menu{
+            margin-top: 10px;
+            background-color: $listBg;
+            .navbar-nav {
+                float: none;
+                position: relative;
+                li {
+                    width: 100%;
+                    padding: $tabsBadding;
+                    border-bottom: 1px solid $tabsBorderColor;
+                    &.active i {
+                        color: $activeTabColor !important;
+                    }
+                    .dropdown-toggle:after {
+                        display: none;
+                    }
+                    > a {
+                        background: none !important;
+                        color: $tabColor !important;
+                        display: inline-block;
+                        font-family: 'Open Sans';
+                        font-size: $tabFontSize;
+                        line-height: 30px;
+                        padding: 8px 16px;
+                        position: relative;
+                        width: 100%;
+                        text-decoration: none;
+                        &:hover,
+                        &:hover span {
+                            color: $activeTabColor !important;
+                        }
+                        i {
+                            float: left;
+                            margin-top: 8px;
+                            font-size: $tab-i-size;
+                            margin-right: 10px;
+                            text-align: left;
+                            z-index: 9;
+                        }
+                    }
+                    &.menu-item-has-children {
+                        position: relative;
+                        a {
+                            line-height: 30px;
+                            //////////////////////////////////////////
+                            &:before {
+                                content: "\f078";
+                                font-family: 'Fontawesome';
+                                font-size: 16px;
+                                position: absolute;
+                                top: 10px;
+                                right: 0;
+                                text-align: right;
+                                -webkit-transition: all 0.25s ease;
+                                -moz-transition: all 0.25s ease;
+                                -ms-transition: all 0.25s ease;
+                                -o-transition: all 0.25s ease;
+                                transition: all 0.25s ease;
+                            }
+                            &:hover:before {
+                                color: $activeTabColor;
+                            }
+                        }
+                        .sub-menu {
+                            background: $listBg;
+                            border: none;
+                            box-shadow: none;
+                            overflow-y: hidden;
+                            padding: 0 25px;
+                            li {
+                                position: relative;
+                                border: none;
+                            }
+                            i {
+                                color: $tabColor;
+                                float: left;
+                                padding: 0;
+                                position: absolute;
+                                left: 0;
+                                font-size: $subMenue-i-size;
+                                top: 9px;                            }
+        
+                            a {
+                                padding: 3px 0 3px 10px;
+                                &:before {
+                                    content: '';
+                                    display: none;
+                                }
+                            }
+                        }
+                        &.show {
+                            a:before {
+                                content: "\f107";
+                            }
+                            .sub-menu {
+                                max-height: 1000px;
+                                opacity: 1;
+                                position: static !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

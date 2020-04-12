@@ -1,0 +1,86 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <ul class="navbar-nav text-right right time fillter">  
+                        <li class="nav-item dropright text-right">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            All
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li>
+                                <i class="far fa-user"></i>
+                                <a class="dropdown-item" href="#">Daily Report</a>
+                              </li>
+                              <li>
+                                <i class="far fa-clock"></i>
+                                <a class="dropdown-item" href="#">Period Report</a>
+                              </li>
+                              <li>
+                                <i class="fas fa-ban"></i>
+                                <a class="dropdown-item" href="#">Analyses</a>
+                              </li>    
+                          </div>
+                        </li>
+                    </ul> 
+                    <app-site-vistors-search></app-site-vistors-search>
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>VISITORS TO THE SITE TODAY</h3>
+                        </div>
+                        <div class="card-body">
+                            <app-chart></app-chart>
+                        </div>
+                    </div>
+                    <div class="vol-rep-table">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>VISITORS TO THE SITE TODAY BY STATE</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                                        <tr>
+                                            <td class="country">Country</td>
+                                            <td class="vistiros">Vistiros</td>
+                                            <td class="page-view">Page View</td>  
+                                        </tr>
+                                           <tr>
+                                                <td>
+                                                    <h4 class="h4-intable">United Arab Emirates</h4>   
+                                                </td>
+                                                <td>
+                                                    <span>1000</span>
+                                                </td>
+                                                <td>
+                                                    <span>2000</span>
+                                                </td>
+                                          </tr>
+                                          <tfoot>
+                                              <td class="today">Today</td>
+                                              <td>50</td>
+                                              <td>140</td>
+                                          </tfoot>		
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

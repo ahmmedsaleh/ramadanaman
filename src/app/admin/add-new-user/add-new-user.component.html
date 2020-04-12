@@ -1,0 +1,114 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>Add a New User</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <form>
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">User Name</td>
+                                        <td class="data">
+                                        
+                                            <input 
+                                                type="text" 
+                                                name="Username"  
+                                                [(ngModel)] = "AddNewUser.Username"
+                                                class="form-control" 
+                                                placeholder="Enter The User Name">
+                                      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Password</td>
+                                        <td class="data">
+                                   
+                                            <input 
+                                                type="password" 
+                                                class="form-control password" 
+                                                name="Password"  
+                                                [(ngModel)] = "AddNewUser.Password"
+                                                placeholder="Enter The Password">
+                                            <i class="show-pass fa fa-eye fa-2x"></i>
+                                   
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Full Name</td>
+                                        <td class="data">
+                                    
+                                            <input 
+                                                type="text" 
+                                                name="FullName"  
+                                                [(ngModel)] = "AddNewUser.FullName"
+                                                class="form-control" 
+                                                placeholder="Enter The Full Name">
+                                        
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Email</td>
+                                        <td class="data">
+                                        
+                                            <input 
+                                                type="email" 
+                                                name="Email"  
+                                                [(ngModel)] = "AddNewUser.Email"
+                                                class="form-control" 
+                                                placeholder="Enter Valid Email">
+                                      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Type</td>
+                                        <td class="data">
+                                            
+                                            <select class="type-of-user" name = "Type" [(ngModel)] = "AddNewUser.Type">
+                                                <option disabled [ngValue]="null">-- Select Type --</option>
+                                                <option  *ngFor = " let type of UsersTypes" [ngValue]="type.id">{{type.name}}</option>
+                                            </select>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                           <select class="form-control" name = "Country" [(ngModel)] = "AddNewUser.Country">
+                                                <option disabled [ngValue]="null">-- Country --</option>
+                                                <option  *ngFor = " let Country of Countries" [ngValue]="Country.id">{{Country.name_en}}</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>
+                              
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button class='btn btn-primary add-button' (click)="showww()"><i class="fas fa-plus"></i>Add</button>
+                            </div>
+                        </form>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

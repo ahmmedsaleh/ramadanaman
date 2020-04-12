@@ -1,0 +1,85 @@
+@import "../edit-country-city/edit-country-city.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    .data{
+                        select{
+                            width: 64%;
+                            option{
+
+                            }
+                        }
+                        .select-place-type-group{
+                            margin-bottom: 0;
+                
+                            .place-type{
+                                display: inline-block;
+                                width: 25%;
+                            }
+                            .Volhours{
+                                display: none;
+                                width: 60%;
+                                margin-left: 100px;
+                                label{
+                                    margin-right: 10px;
+                                }
+                                .hours-no{
+                                    width: 25%;
+                                    height: 35px;
+                                   display: inline-block;
+                                }
+                            }
+                        }
+                        .requiredPerson{
+                            width: 21%;
+                            height: 30px;
+                            font-size: 14px;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                        }
+                        .allowed{
+                            label{
+                                margin-right: 24px;
+                                margin-left: 2px;
+                                font-weight: 500;
+                            }
+                        }
+                        textarea{
+                            width: 64%;
+                            height: 100px;
+                            font-size: 13px;
+                        }
+                        .days{
+                            .select-day{
+                                font-weight: 700;
+                                width: 50px;
+                                text-align: center;
+                                height: 50px;
+                                line-height: 50px;
+                                color: #fff;
+                                background-color: #00b894;
+                                position: relative;
+                                border-radius: 3px;
+                                margin-right: 5px;
+                                .theday{
+                                    position: absolute;
+                                    right: 0px;
+                                    top: 0px;
+                                }
+                               
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .card-footer{
+        } 
+    }
+
+}

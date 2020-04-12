@@ -1,0 +1,66 @@
+@import "../../../../styles.scss";
+
+
+
+.stat{
+    padding: 15px 10px 15px 6px;
+    color: $tabsColor;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    i{
+        float: left;
+        font-size: $tabIconFontSize;
+        position: relative;
+        top: 14px;
+        left: 10px;
+    }
+    .info{
+        float: right;
+        font-size: $tabsFontSize;
+        font-weight: bold;
+    }
+    span{
+        display: block;
+        font-size: $numberFontSize;
+        text-align: right;
+        font-weight: 400;
+        a{
+            color: $tabsColor;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
+.st-message{
+    background-color: $st-messageBG;
+}
+.st-place{
+    background-color: $st-placeBG;
+}
+.st-city{
+    background-color: $st-cityBG;
+}
+.st-v-report{
+    background-color: $st-v-reportBG;
+}
+.st-member{
+    background-color: $st-memberBG;
+}
+.st-setings{
+    background-color: $st-setingsBG;
+}
+.st-customer{
+    background-color: $st-customerBG;
+}
+.st-page{
+    background-color: $st-pageBG;
+}
+.st-banar{
+    background-color: $st-banarBG;
+}
+.st-report{
+    background-color: $st-reportBG;
+}

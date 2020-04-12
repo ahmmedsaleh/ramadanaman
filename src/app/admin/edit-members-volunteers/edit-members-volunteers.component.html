@@ -1,0 +1,380 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header"> 
+                          <h3>EDIT MEMBER</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <form [formGroup]="EditMembersForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Type</td> 
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select class="regType" name = "reg_type" formControlName="type">
+                                                    <option disabled [ngValue]="null" selected> -- Choose --</option>
+                                                    <option value="person">Person</option>
+                                                    <option value="family">Family</option>
+                                                    <option value="orgnization">Orgnization</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group select-agency-group">
+                                                <label class="Registeration-lable" for="validationTooltip04">
+                                                    Select Agency : 
+                                                </label> 
+                                    
+                                                <select class="select-agency" name = "agancey" formControlName="agancey" >
+                                                    <option disabled [ngValue]="null" selected> -- Choose --</option>
+                                                    <option *ngFor = " let agancy of Agancies" [value]="agancy.id">{{agancy.name}}</option>
+                                                </select>
+                                    
+                                                <div class="acadimic-id">
+                                                    <label class="Registeration-lable" for="validationTooltip04">
+                                                        ID : 
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="acc-id" 
+                                                        name="acc_id" 
+                                                        formControlName="acc_id"
+                                                        placeholder="Your ID"
+                                                        required>
+                                                </div>
+                                                
+                                            </div>
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Password</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="password" 
+                                                    class="form-control password" 
+                                                    name="password" 
+                                                    formControlName="password"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                                    placeholder="Enter The Password">
+                                                <div *ngIf="submitted && f.password.errors"  class="invalid-feedback">
+                                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                                </div>
+                                                <i class="show-pass fa fa-eye fa-2x"></i>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Full Name</td>
+                                        <td class="data">
+                                            <!-- full name in inglish-->
+                                            <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                            <div class="guide-en-message">Enter Full Name In English</div>
+                                            <div class="fullname form-group">
+                                                <div class="row">
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="first_name_en" 
+                                                            formControlName="first_name_en"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.first_name_en.errors }"
+                                                            placeholder="First name">
+                                                        <div *ngIf="submitted && f.first_name_en.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.first_name_en.errors.required">First Name is required</div>
+                                                            <div *ngIf="f.first_name_en.errors.minlength">First Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="second_name_en" 
+                                                            formControlName="second_name_en"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.second_name_en.errors }"
+                                                            placeholder="Second name">
+                                                        <div *ngIf="submitted && f.second_name_en.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.second_name_en.errors.required">Second Name is required</div>
+                                                            <div *ngIf="f.second_name_en.errors.minlength">Second Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="third_name_en" 
+                                                            formControlName="third_name_en"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.third_name_en.errors }"
+                                                            placeholder="Third name">
+                                                        <div *ngIf="submitted && f.third_name_en.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.third_name_en.errors.required">Third Name is required</div>
+                                                            <div *ngIf="f.third_name_en.errors.minlength">Third Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="fourth_name_en" 
+                                                            formControlName="fourth_name_en"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.fourth_name_en.errors }"
+                                                            placeholder="Last name">
+                                                        <div *ngIf="submitted && f.fourth_name_en.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.fourth_name_en.errors.required">Fourth Name is required</div>
+                                                            <div *ngIf="f.fourth_name_en.errors.minlength">Fourth Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--full name in arabic-->
+                                            <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                            <div class="guide-ar-message">Enter Full Name In Arabic</div>
+                                            <div class="fullname form-group">
+                                                <div class="row">
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="first_name_ar" 
+                                                            formControlName="first_name_ar"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.first_name_ar.errors }"
+                                                            placeholder="First name">
+                                                        <div *ngIf="submitted && f.first_name_ar.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.first_name_ar.errors.required">First Name is required</div>
+                                                            <div *ngIf="f.first_name_ar.errors.minlength">First Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="second_name_ar" 
+                                                            formControlName="second_name_ar"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.second_name_ar.errors }"
+                                                            placeholder="Second name">
+                                                        <div *ngIf="submitted && f.second_name_ar.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.second_name_ar.errors.required">Second Name is required</div>
+                                                            <div *ngIf="f.second_name_ar.errors.minlength">Second Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="third_name_ar" 
+                                                            formControlName="third_name_ar"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.third_name_ar.errors }"
+                                                            placeholder="Third name">
+                                                        <div *ngIf="submitted && f.third_name_ar.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.third_name_ar.errors.required">Third Name is required</div>
+                                                            <div *ngIf="f.third_name_ar.errors.minlength">Third Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col section">
+                                                        <input 
+                                                            type="text" 
+                                                            name="fourth_name_ar" 
+                                                            formControlName="fourth_name_ar"
+                                                            class="form-control" 
+                                                            [ngClass]="{ 'is-invalid': submitted && f.fourth_name_ar.errors }" 
+                                                            placeholder="Last name">
+                                                        <div *ngIf="submitted && f.fourth_name_ar.errors"  class="invalid-feedback">
+                                                            <div *ngIf="f.fourth_name_ar.errors.required">Fourth Name is required</div>
+                                                            <div *ngIf="f.fourth_name_ar.errors.minlength">Fourth Name must be at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Phone Number</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                type="text" 
+                                                class="form-control phoneNom" 
+                                                name="phone" 
+                                                formControlName="phone"
+                                                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" 
+                                                placeholder="Enter Phone Number">
+                                            <div *ngIf="submitted && f.phone.errors"  class="invalid-feedback">
+                                                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                                                <div *ngIf="f.phone.errors.minlength">Phone must be at least 7 characters</div>
+                                            </div>
+                                            </div>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Email</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                type="email" 
+                                                class="form-control email" 
+                                                name="email" 
+                                                formControlName="email"
+                                                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
+                                                placeholder="Enter Email">
+                                            <div *ngIf="submitted && f.email.errors"  class="invalid-feedback">
+                                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                                <div *ngIf="f.email.errors.email">Email Not Valide</div>
+                                            </div>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Gender</td>
+                                        <td class="data">
+                                            <div class="gender form-group">
+                                                <input  
+                                                    type="radio" 
+                                                    id="male" 
+                                                    name="gender" 
+                                                    value="male" 
+                                                    (change)="radioChangeHandelerGender($event)">
+                                                <label for="male">Male</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="female" 
+                                                    name="gender" 
+                                                    value="female" 
+                                                    (change)="radioChangeHandelerGender($event)">
+                                                <label for="female">female</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="title">Membership Type</td>
+                                        <td class="data">
+                                            <div class="form-group select-mem-type-group">
+                                                <select class="form-control mem-type" name = "mem_type" formControlName="mem_type" [ngClass]="{ 'is-invalid': submitted && f.mem_type.errors }"> 
+                                                    <option selected disabled [ngValue]="null">-- Member Type --</option>
+                                                    <option value="vol">Volunteer</option>
+                                                    <option value="sup">Site Supervisor</option>
+                                                </select>
+                                                <div *ngIf="submitted && f.mem_type.errors"  class="invalid-feedback">
+                                                    <div *ngIf="f.mem_type.errors.required">Member Type is required</div>
+                                                </div>
+                                                <div class="place">
+                                                    <label class="Registeration-lable" for="validationTooltip04">
+                                                        Place :
+                                                    </label>
+                                                    <select name="place" class="select-place"  formControlName="place_id">  
+                                                        <option disabled [ngValue]="null"> -- Place --</option>
+                                                        <option *ngFor = " let place of Places" [value]="place.id">{{place.name_en}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td class="title">Nationality</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select class="form-control nationality" name = "nationality" formControlName="nationality" [ngClass]="{ 'is-invalid': submitted && f.nationality.errors }">
+                                                    <option disabled [ngValue]="null" selected>-- Nationality --</option>
+                                                    <option  *ngFor = " let nationality of Nationalities" [value]="nationality.id">{{nationality.name}}</option>
+                                                </select>
+                                                <div *ngIf="submitted && f.nationality.errors"  class="invalid-feedback">
+                                                    <div *ngIf="f.nationality.errors.required">Nationality is required</div>
+                                                </div>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <select class="form-control country">
+                                                <option>-- Country --</option>
+                                            </select>
+                                        </td>
+                                    </tr> -->
+                                    <tr>
+                                        <td class="title">News Letter?</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">
+                                                <input  
+                                                    type="radio" 
+                                                    id="yes" 
+                                                    name="newsletter" 
+                                                    value="yes" 
+                                                    (change)="radioChangeHandelerNews($event)">
+                                                <label for="yes">Yes</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="no" 
+                                                    name="newsletter" 
+                                                    value="no" 
+                                                    (change)="radioChangeHandelerNews($event)">
+                                                <label for="no">no</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Notes</td>
+                                        <td class="data">
+                                            <div class="notes form-group">
+                                                <textarea 
+                                                    class="form-control" 
+                                                    name="note" 
+                                                    formControlName="note" 
+                                                    placeholder="Enter Notes....">
+                                                </textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Active</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">
+                                                <input  type="radio" id="active" name="Status" value="active" (change)="radioChangeHandelerStatus($event)">
+                                                <label for="active">Yes</label>
+                                                <input  type="radio" id="notactive" name="status" value="notactive" (change)="radioChangeHandelerStatus($event)">
+                                                <label for="notactive">No</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                              
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                                <div class="member-login-info">
+                                    <h5>Date : <span class="date">10-12-2019</span></h5>
+                                    <h5>Last Login : <span class="last-time">14/06/2018 09:33 AM</span></h5>
+                                    <h5>IP: <span class="ip"> 91.73.87.14</span></h5>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,36 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+.container{
+    .table{
+        overflow: hidden;
+        tr{
+            .check{
+                width: 5%;
+            }
+            .name{
+                width: 58%;
+            }
+            .d-o-b{
+                width: 14%;
+            }
+            .option{
+                width: 23%;
+            }
+            td{
+                .h4-intable{
+                    display: inline-block;
+                    float: left;
+                } 
+                h6{
+                    text-align: left;
+                    font-size: 12px;
+                    font-weight: 400;
+                    padding-left: 5px;
+                    margin-bottom: 6px;
+                    color: $tableRowColor;
+                    clear: both;
+                }  
+            }
+        }
+    }
+}

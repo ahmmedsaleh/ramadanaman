@@ -1,0 +1,66 @@
+
+@import "../edit-country-city/edit-country-city.component.scss";
+
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    .title{
+
+                    }
+                    .data{
+                        span{
+                            font-size: 14px;
+                            font-weight: 400;;
+                        }
+                        .table{
+                            tr{
+                                &:first-child td{
+                                    background-color: $tableHeadBgColor!important;
+                                    color: $tableHeadColor!important;
+                                    padding: 10px 10px !important;
+                                }
+                                .hours, .hours-value{
+                                    text-align: center;
+                                }
+                                td{
+                                    padding: 10px 10px !important;
+                                }
+                                .locations{
+                                    position: relative;
+                                    label{
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        color: $tableRowColor;
+                                    }
+                                    
+                                    .sup-location{
+                                        margin-right: 5px;
+                                        position: relative;
+                                        top: 2px;
+                                        width: 14px;
+                                        height: 14px;
+                                    }
+                                    
+                                }
+                                .hours-value{
+                                    .hours-no{
+                                        width: 50%;
+                                        height: 33px;
+                                        margin: 0 auto;
+                                        font-weight: 500;
+                                        font-size: 15px;
+                                        color: $tableRowColor;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

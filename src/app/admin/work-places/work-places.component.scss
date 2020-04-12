@@ -1,0 +1,45 @@
+
+@import "../volunteers-report/volunteers-report.component.scss";
+
+
+.container{
+    margin-top: 50px;
+    .table{
+        overflow: hidden;
+        tr{
+            .checkbox{
+                width: 5%;
+            }
+            .location{
+                width: 35%!important;
+            }
+            .mainCountry{
+                width: 20%;
+            }
+            .number{
+                width: 10%;
+            }
+            .status{
+                width: 10%;
+            }
+            .options{
+                width: 20%;
+            }
+            .fullLocation{
+                .country{
+                    text-align: left;
+                    font-size: 11px!important;
+                    color: #FFF!important;
+                    background-color: #cf6a87;
+                    font-weight: 500!important;
+                    padding: 5px 10px;
+                    border-radius: 15px;
+                }
+            }
+            .diss{
+                background-color: #fa983a;
+            }
+            
+        }
+    }
+}

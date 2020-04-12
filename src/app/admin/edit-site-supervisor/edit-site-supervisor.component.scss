@@ -1,0 +1,137 @@
+@import "../edit-country-city/edit-country-city.component.scss";
+@import "../edit-members-volunteers/edit-members-volunteers.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                .data{
+                    position: relative;
+                    input{
+                        width: 64%;
+                        font-size: 14px;
+                        &::placeholder{
+                            font-size: 14px;
+                        }
+                    }
+                    .password{
+                        display: inline-block;
+                        
+                        & + i{
+                            font-size: 18px;
+                            margin-left: 10px;
+                            cursor: pointer;
+                        }
+                    }
+                    .for-defintion-en{
+                        &:hover + .guide-en-message{
+                            display: inline-block;
+                        }
+
+                    }
+                    img{
+                        cursor: pointer;
+                    }
+                    .guide-en-message ,.guide-ar-message{
+                        position: absolute;
+                        top: 21px;
+                        left: 65px;
+                        padding: 5px 10px;
+                        font-size: 13px;
+                        background-color: #FFF;
+                        border: 1px solid #DDD;
+                        border-left: 5px solid #080;
+                        display: none;
+                    }
+                    .guide-ar-message{
+                        top: 101px;
+                    }
+                    .for-defintion-ar{
+                        margin-top: 10px;
+                        &:hover + .guide-ar-message{
+                            display: inline-block;
+                        }
+
+                    }
+                    .fullname{
+                        margin-top: 5px;
+                        padding: 0 60px;
+                        .row{
+                            .section{
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                
+                                input{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .phoneNom{
+                        width: 27%;
+                    }
+                    .gender, .newsletter{
+                        input{
+                            width: auto;
+                            margin-right: 2px;
+                             + label{
+                                margin-right: 15px;
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                    .select-mem-type-group{
+                
+                        .mem-type{
+                            display: inline-block;
+                            width: 22%;
+
+                        }
+                        .place{
+                            display: none;
+                            width: 60%;
+                            margin-left: 100px;
+                            label{
+                                margin-right: 10px;
+                            }
+                            .select-place{
+                               width: 80%;
+                            }
+                        }
+                    }
+                    .nationality, .country{
+                        width: 65%;
+                    }
+                    .notes{
+                        textarea{
+                            width: 65%;
+                            height: 100px;
+                            font-size: 14px;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .card-footer{
+            .member-login-info{
+                clear: both;
+                text-align: left;
+                padding-left: 10px;
+                padding-top: 10px;
+                h5{
+                    font-size: 14px;
+                    font-weight: 400;
+                    span{
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}

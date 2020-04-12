@@ -1,0 +1,141 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs> 
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>Add New Supervisor</h3>
+                          <div class="close" (click)="goback()"> 
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <form [formGroup]="AddCitySupForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">User Name</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    name="username" 
+                                                    formControlName="username"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                                                    class="form-control" 
+                                                    placeholder="Enter The User Name">
+                                                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.username.errors.required">Name is required</div>
+                                                    <div *ngIf="f.username.errors.minlength">User Name must be at least 3 characters</div>
+                                                </div>    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Password</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="password" 
+                                                    class="form-control password" 
+                                                    name="password" 
+                                                    formControlName="password"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                                                    placeholder="Enter The Password">
+                                                <i class="show-pass fa fa-eye fa-2x"></i>
+                                                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                                    <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                                                </div>    
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Full Name</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    name="full_name" 
+                                                    formControlName="full_name"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.full_name.errors }"
+                                                    class="form-control" 
+                                                    placeholder="Enter The Full Name">
+                                                <div *ngIf="submitted && f.full_name.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.full_name.errors.required">Full Name is required</div>
+                                                    <div *ngIf="f.full_name.errors.minlength">Full Name must be at least 9 characters</div>
+                                                </div>        
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Email</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="email" 
+                                                    name="email" 
+                                                    formControlName="email"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                                                    class="form-control" 
+                                                    placeholder="Enter Valid Email">
+                                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.email.errors.required">Email is required</div>
+                                                    <div *ngIf="f.email.errors.email">Email Not Valid</div>
+                                                </div>      
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="OrgAdmins">
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select 
+                                                    name = "country_id" 
+                                                    formControlName="country_id" 
+                                                    (change)="selectChangeHandler($event)"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.country_id.errors }">
+                                                    <option disabled [ngValue]="null" selected> -- Country --</option>
+                                                    <option *ngFor = " let country of Countries;let i=index" [value]="country.id">{{country.name_en}}</option>
+                                                </select>
+                                                <div *ngIf="submitted && f.country_id.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.country_id.errors.required">Country is required</div>
+                                                </div>    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">City</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select name = "City" formControlName="city_id" >
+                                                    <option disabled [ngValue]="null" selected> -- Citiy --</option>
+                                                    <option *ngFor = " let city of Cities;let i=index" [value]="city.id">{{city.name_en}}</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>   
+                                </table> 
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary add-button' ><i class="fas fa-plus"></i>Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

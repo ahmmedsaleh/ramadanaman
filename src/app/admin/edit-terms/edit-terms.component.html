@@ -1,0 +1,276 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>EDIT TERMS & CONDITIONS</h3>
+                          <div class="close" (click)="goback()"> 
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <form [formGroup]="EditTermsForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Header</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <!-- About us text in inglish-->
+                                                <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                <div class="guide-en-message">Enter Terms Header In English</div>
+                                    
+                                                <textarea  
+                                                    class="form-control about-text" 
+                                                    name="header_en" 
+                                                    formControlName="header_en"
+                                                    placeholder="Enter Terms Header In English">
+                                                </textarea>
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                 <!--About us text in arabic-->
+                                                <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                <div class="guide-ar-message">Enter Terms Header In Arabic</div>
+                                    
+                                                <textarea  
+                                                    class="form-control about-text" 
+                                                    name="header_ar" 
+                                                    formControlName="header_ar"
+                                                    placeholder="Enter Terms HeaderIn Arabic">
+                                                </textarea>
+                                            </div>
+                                            
+                                
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Content</td>
+                                        <td class="data">
+                                            <div class="cont">
+                                                <div class="one-row">
+                                                    <div class="list1">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="first_en" 
+                                                                formControlName="first_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="first_ar" 
+                                                                formControlName="first_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                    <div class="list2" *ngIf ="ListTwo">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="second_en" 
+                                                                formControlName="second_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="second_ar" 
+                                                                formControlName="second_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                    <div class="list3" *ngIf ="ListThree">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="third_en" 
+                                                                formControlName="third_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="third_ar" 
+                                                                formControlName="third_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                    <div class="list4" *ngIf ="ListFour">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="fourth_en" 
+                                                                formControlName="fourth_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="fourth_ar" 
+                                                                formControlName="fourth_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                    <div class="list5" *ngIf ="ListFive">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="fifth_en" 
+                                                                formControlName="fifth_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="fifth_ar" 
+                                                                formControlName="fifth_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                    <div class="list6" *ngIf ="ListSix">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="six_en" 
+                                                                formControlName="six_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="six_ar" 
+                                                                formControlName="six_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                    <div class="list7" *ngIf ="ListSeven">
+                                                        <!-- About us text in inglish-->
+                                                        <div class="english">
+                                                           <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                           <div class="guide-en-message">Enter Terms List In English</div>
+                                                 
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="seven_en" 
+                                                                formControlName="seven_en"
+                                                                placeholder="Enter Terms List In English">
+                                                            </textarea>
+                                                  
+                                                        </div>
+                                                       
+                                                       <!--About us text in arabic-->
+                                                       <div class="arabic">
+                                                           <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                           <div class="guide-ar-message">Enter Terms List In Arabic</div>
+                                                  
+                                                            <textarea  
+                                                                class="form-control about-text" 
+                                                                name="seven_ar" 
+                                                                formControlName="seven_ar"
+                                                                placeholder="Enter Terms List In Arabic">
+                                                            </textarea>
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

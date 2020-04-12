@@ -1,0 +1,19 @@
+@import "../../../../styles.scss";
+@import "../../volunteers-report/volSearch/volsearch.component.scss";
+
+.search{
+    form{
+        
+    }
+    .this-day{
+        padding-right: 8px;
+        h4{
+            font-size: 16px;
+            color: $buttonBg;
+            span{
+                font-size: 14px;
+                color: $tableRowColor;
+            }
+        }
+    }
+}

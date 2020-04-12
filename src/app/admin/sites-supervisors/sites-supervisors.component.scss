@@ -1,0 +1,32 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+
+.container{
+    .table{
+        tr{
+            .name{
+                text-align: left;
+                width: 25%;
+            }
+            .country{
+            
+                width: 20%;
+            }
+            .city{
+             
+                width: 15%;
+            }
+            .place{
+        
+                width: 20%;
+            }
+            .options{
+                width: 20%;
+            }
+            .phone-u-h4{
+                text-align: left;
+                font-size: 13px!important;
+            }
+        }
+    }
+}

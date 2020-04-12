@@ -1,0 +1,91 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">  
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs> 
+                <div class="container">
+                    <ul class="navbar-nav text-right right admin-log fillter">  
+                        <li class="nav-item dropright text-right">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            All
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li>
+                                <i class="far fa-user"></i>
+                                <a class="dropdown-item" href="#">Activate</a>
+                              </li>
+                              <li>
+                                <i class="far fa-clock"></i>
+                                <a class="dropdown-item" href="#">Wait Activation</a>
+                              </li>
+                              <li>
+                                <i class="fas fa-ban"></i>
+                                <a class="dropdown-item" href="#">Blocked</a>
+                              </li>    
+                          </div>
+                        </li>
+                    </ul>  
+                    <app-mem-search></app-mem-search>
+                    <div class="table-responsive">
+                        <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                            <tr>
+                                <td class="check"><input type="checkbox"></td>
+                                <td class="name">Name</td>
+                                <td class="d-o-b">Date Of Birth</td>
+                                <td class="option">Options</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>
+                                    <h4 class="h4-intable">Ahmed Hashem Ali</h4> 
+                                    <span class="child-status"><i class="fas fa-times"></i>Desabled</span>
+                                    <h6>971501404662</h6>
+                                    <h6>ahmedhashem.ah988@gmail.com</h6>
+                                    <h6>01-02-2020</h6>
+                                    <h6>United Arab Emirates</h6>
+                                   
+                                </td>
+                                <td>
+                                    <span class="birthDate">01-11-1995</span> 
+                                </td>
+                               
+                                <td>
+                                    <div class="row ed-option">
+                                        <button (click)="goToEditMember($event)" class="edit-option">
+                                            <i class="far fa-edit"></i>Edit
+                                        </button>
+                                        <button (click)="goToDeleteMember($event)"  class="delete-option">
+                                            <i class="far fa-trash-alt"></i>Delete
+                                        </button>
+                                    </div>
+                                    <div class="row a-option">
+                                        <button  (click)="goToChStatusMember($event)"  class="active-option">
+                                            <i class="fas fa-check"></i>Activate
+                                        </button>
+                                    </div>
+                                   
+                                    
+                                </td>
+                          </tr>	
+
+                        </table>
+                    </div>
+                    <a href='#' class='btn btn-primary activate'><i class="fas fa-check"></i>Activate</a>
+                    <a href='#' class='btn btn-primary disactivate'><i class="fas fa-times"></i>Deny</a>
+                    <a href='#' class='btn btn-primary delete'><i class="far fa-trash-alt"></i>Delete</a>
+                    <a href="#" class='btn btn-primary exbut'><i class="fas fa-download"></i>Export</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

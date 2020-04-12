@@ -1,0 +1,123 @@
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div class="navbar-header">
+            <h3><a href='#' routerLink='/Dashboard'>Control Panal</a></h3>
+        </div>
+        <div class="today-date">
+            <h4>1/11/1995</h4>
+        </div>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active animate4 fadeInUp">
+                    <a href="#" routerLink='/Dashboard'>
+                        <i class="fas fa-bars"></i> Dashboard 
+                    </a>
+                </li>
+                <li class="animate5 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/VolReport'>
+                        <i class="fas fa-user"></i> Volunteers Report 
+                    </a>
+                </li>
+                <li class="animate6 fadeInUp">
+                    <a href="#" routerLink='/Attendance'>
+                        <i class="fas fa-list-ul"></i> Attendance 
+                    </a>
+                </li>
+                <li class="animate7 fadeInUp" *ngIf="OrgCounAdmins">
+                    <a href="#" routerLink='/CountriesCites'>
+                        <i class="fas fa-city"></i> Countries &amp; Cities 
+                    </a>
+                </li>
+                <li class="animate8 fadeInUp" *ngIf="OrgCounAdmins">
+                    <a href="#" routerLink='/CountryNotes'>
+                        <i class="fas fa-comment-dots"></i> Country Notes 
+                    </a>
+                </li>
+                <li class="animate9 fadeInUp" *ngIf="OrgCounCityAdmins">
+                    <a href="#" routerLink='/WorkPlaces'>
+                        <i class="fas fa-map-marker-alt"></i> Work Places 
+                    </a>
+                </li>
+                <li class="animate10 fadeInUp">
+                    <a href="#" routerLink='/MemberVolunteers'>
+                        <i class="fas fa-users"></i> Members Volunteers
+                    </a>
+                </li>
+                <li class="animate11 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/Rate' >
+                        <i class="fas fa-star"></i> How to rate your experiment
+                    </a>
+                </li>
+                <li class="animate12 fadeInUp">
+                    <a href="#" routerLink='/SitesSupervisors'>
+                        <i class="fas fa-user-tie"></i> Sites Supervisors  
+                    </a>
+                </li>
+                <li class="animate13 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/VolunteersNotes'>
+                        <i class="fas fa-comments"></i> Volunteers Notes  
+                    </a>
+                </li>
+                <li class="animate14 fadeInUp" *ngIf="OrgCounAdmins">
+                    <a href="#" routerLink='/CitySupervisors' >
+                        <i class="fas fa-user-alt"></i> City supervisors 
+                    </a>
+                </li>
+                <li class="animate15 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/CountrySupervisors'>
+                        <i class="fas fa-user-tie"></i> Countries supervisors 
+                    </a>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-signal"></i> Reports 
+                    </a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li *ngIf="OrgCounAdmins"><a href="#" routerLink='/GeneralReport'> General Report </a></li>
+                        <li *ngIf="OrgCounAdmins"><a href="#" routerLink='/VolunteerCounter'> Volunteers Counter </a></li>
+                        <li *ngIf="OrgCounAdmins"><a href="#" routerLink='/AttendanceByPlace'> Attendance By Place </a></li>
+                        <li *ngIf="OrgCounAdmins"><a href="#" routerLink='/AttendanceByPerson'> Attendance By Persons </a></li>
+                        <li *ngIf="OrgAdmins"><a href="#" routerLink='/EventsLog'> Events log </a></li>
+                        <li><a href="#" routerLink='/SiteVistors' >Site visitors</a></li>
+                    </ul>
+                </li>
+                <li class="animate18 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/MainSitePages'>
+                        <i class="fas fa-th-large"></i>Site pages 
+                    </a>
+                </li>
+                <li class="animate18 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/OfficialAgencies'>
+                        <i class="far fa-list-alt"></i> Official agencies 
+                    </a>
+                </li>
+                <li class="animate19 fadeInUp" *ngIf="OrgAdmins">
+                    <a href="#" routerLink='/Customers'>
+                        <i class="fas fa-user"></i> Customers 
+                    </a>
+                </li>
+                <!-- <li class="animate20 fadeInUp">
+                    <a href="#" routerLink='/AdsBaners'>
+                        <i class="fas fa-retweet"></i> Ads banars 
+                    </a>
+                </li> -->
+                <!-- <li class="animate21 fadeInUp">
+                    <a href="#" routerLink='/ReceivedMessages'>
+                        <i class="fas fa-envelope"></i> Received messages 
+                    </a>
+                </li> -->
+                <li class="menu-item-has-children dropdown" *ngIf="OrgAdmins">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-cog"></i> Genral Settings 
+                    </a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li *ngIf="OrgAdmins"><a href="#" routerLink='/SiteOptions'>Site options</a></li>
+                        <li *ngIf="OrgAdmins"><a href="#" routerLink='/UserPrivileges' >Users and privileges</a></li>
+                        <li *ngIf="OrgAdmins"><a href="#" routerLink='/Backup'>Backup</a></li>
+                        <li *ngIf="OrgAdmins"><a href="#" routerLink='/OpenCloseSite'>Open / Close Site</a></li>
+                    </ul>
+                </li>        
+            </ul>
+        </div>
+    </nav>
+</aside>

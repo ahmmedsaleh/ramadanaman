@@ -1,0 +1,64 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <ul class="navbar-nav text-right right admin-log fillter">  
+                        <li class="nav-item dropright text-right">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            All
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                              <li>
+                                <i class="fas fa-user-tie"></i>
+                                <a class="dropdown-item" href="#">Supervisors</a>
+                              </li>
+                              <li>
+                                <i class="far fa-user"></i>
+                                <a class="dropdown-item" href="#">Volunteers</a>
+                              </li>  
+                          </div>
+                        </li>
+                    </ul> 
+                    <app-vol-n-search></app-vol-n-search>
+                    <div class="table-responsive">
+                        <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                            <tr>
+                                <td class="name">Name</td>
+                                <td class="city">City</td>
+                                <td class="date">Date</td>
+                                <td class="notes">Notes</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4 class="h4-intable">Ahmed Hashem Ali</h4> 
+                                    <h5 class="country-u-h4">United Arab Emirates</h5> 
+                                </td>
+                                <td>
+                                    <span>Dubie</span>
+                                </td>
+                                <td>
+                                    <span>01-06-2020</span>
+                                <td>
+                                    <p class="lead">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+                                </td>
+                          </tr>	
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

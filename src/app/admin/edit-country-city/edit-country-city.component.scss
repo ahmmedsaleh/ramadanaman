@@ -1,0 +1,157 @@
+@import "../edit-attendance/edit-attendance.component.scss";
+
+.container{
+    .card{
+        .card-header{
+            background-color: #333;
+            color: #fff;
+            padding: 16px 20px;
+            .close{
+                text-shadow: none;
+                span{
+                    color: #FFF;
+                }
+            }
+        }
+        .card-body{
+            .table{
+                tr{
+                    td{
+                        padding: 22px 9px!important;
+                    }
+                    &:first-child td{
+                        background-color: #FFF!important;
+                        color: !important;
+                        color:  $tableRowColor!important;
+                    }
+                    .data{
+                        .select-agency-group{
+                
+                            .select-section{
+                                display: inline-block;
+                            }
+                            .country{
+                                display: none;
+                                width: 65%;
+                                margin-left: 100px;
+                                label{
+                                    margin-right: 10px;
+                                }
+                                .select-country{
+                                   width: 80%;
+                                }
+                            }
+                        }
+
+                        select{
+                            padding: 7px 10px;
+                            border-radius: 6px;
+                            background-color: #dfe6e9;
+                            border-color: #aaaebd;
+                            font-size: 14px;
+                            option{
+                                font-size: 14px;
+                                padding: 5px 10px;
+                            }
+                        }
+                        .english, .arabic{
+                            label{
+                                width: 47px;
+                                height: 33px;
+                                margin-right: 20px;
+                                margin-bottom: 0;
+                                background-color: #DDD;
+                                padding: 4px 4px;
+                                border-radius: 5px;
+                               
+                            }
+                            input{
+                                display: inline-block;
+                                width: 55%;
+                                font-size: 14px;
+                                &::placeholder{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        .arabic{
+                            margin-top: 10px;
+                        }
+                        .image{
+                            width: 45px;
+                            height: 30px;
+                            display: inline-block;
+                            &:hover + .deleteImage{
+                                display: inline-block;
+                            }
+                        }
+                        .deleteImage{
+                            padding-left: 10px;
+                            color: $tableRowColor;
+                            font-size: 14px;
+                            font-weight: 500;
+                            display: none;
+                            &:hover{
+                                color: #c0392b;
+                                display: inline-block;
+                            }
+                        }
+                        .chooseImage{
+                            width: 0.1px;
+                            height: 0.1px;
+                            opacity: 0;
+                            overflow: hidden;
+                            position: absolute;
+                            z-index: -1;
+                            cursor: pointer;
+                            &:focus + label {
+                                background-color: #9980FA;
+                            }
+                        }
+                        .uploade-image {
+                            color: white;
+                            padding: 8px 30px;
+                            font-size: 15px;
+                            font-weight: 500;
+                            background-color: #5758BB;
+                            display: inline-block;
+                            margin-left: 25px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #9980FA;
+                            }
+                            i{
+                                margin-right: 4px;
+                            }
+                        }
+                        
+                        .phoneCode{
+                            width: 21%;
+                            height: 30px;
+                            font-size: 14px;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                        }
+                        .status{
+                          label{
+                              margin-right: 24px;
+                              margin-left: 2px;
+                              font-weight: 500;
+                          }
+                        }
+
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+
+
+
+.hidee{
+    display: none!important;
+}

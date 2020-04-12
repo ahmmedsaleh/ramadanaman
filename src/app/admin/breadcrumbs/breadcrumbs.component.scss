@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+
+.breadcrumbs {
+    background-color: $bcBg;
+    display: inline-block;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+        nav{
+            padding: 0;
+            ol{
+                padding: 4px 20px;
+                background-color: unset;
+                margin-bottom: 0;
+                li{
+                    font-size: $activeFontSize;
+                    a{
+                        font-size: $activeFontSize+1;
+                        text-decoration: none;
+                        color: $linkColor;
+                    }
+                }
+                .active{
+                    color: $activeLinkColor;
+                }
+            }
+        }
+}

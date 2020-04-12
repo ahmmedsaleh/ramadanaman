@@ -1,0 +1,95 @@
+@import "../edit-home/edit-home.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    .data{
+                      
+                        textarea{
+                            width: 65%;
+                            height: 60px;
+                            font-size: 14px;
+                            &::placeholder{
+                                font-size: 13px;
+                            }
+                        }
+                        
+                        .guide-ar-message{
+                            top: 132px;
+                        }
+                        .list1, .list2, .list3, .list4, .list5, .list6, .list7{
+                            position: relative;
+                            display: flow-root;
+                            .english{
+                                .guide-en-message{
+                                    top: 0px;
+                                    left: 52px;
+                                }
+                            }
+                            .arabic{
+                                width: 100%;
+                                float: right;
+                                text-align: right;
+                                direction: rtl;
+                                margin-top: 0;
+                                position: relative;
+                                top: -43px;
+                                .guide-ar-message{
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 517px;
+                                    width: max-content;
+                                    border-right: 5px solid #080;
+                                    border-left: 1px solid #DDD;
+                                }
+                                textarea{
+                                    text-align: left;
+                                }
+                            }
+                        }
+                        .cont{
+                            position: relative;
+                            &:first-child(.list){
+                                position: relative;
+                                .english{
+                                    .guide-en-message{
+                                        top: 0px;
+                                        left: 52px;
+                                    }
+                                }
+                                .arabic{
+                                    width: 100%;
+                                    float: right;
+                                    text-align: right;
+                                    direction: rtl;
+                                    margin-top: 0;
+                                    position: relative;
+                                    top: -43px;
+                                    .guide-ar-message{
+                                        position: absolute;
+                                        top: 10px;
+                                        left: 492px;
+                                        width: max-content;
+                                        border-right: 5px solid #080;
+                                        border-left: 1px solid #DDD;
+                                    }
+                                    textarea{
+                                        text-align: left;
+                                    }
+                                }
+                            }
+                        }
+                       
+                        .add-list{
+                            background-color: $addButtonBG;
+                            color: #FFF;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

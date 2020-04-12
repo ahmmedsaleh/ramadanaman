@@ -1,0 +1,16 @@
+@import "../city-supervisors/city-supervisors.component.scss";
+.container{
+    .table{
+        tr{
+            .name{
+                width: 50%;
+            }
+            .vistors{
+                width: 20%;
+            }
+            .option{
+                width: 30%;
+            }
+        }
+    }
+}

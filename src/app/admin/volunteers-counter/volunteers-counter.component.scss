@@ -1,0 +1,28 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+.container{
+    
+    .table{
+        tr{
+            .place{
+                width: 33%;
+            }
+            .country{
+                width: 20%;
+            }
+            .city{
+                width: 15%;
+            }
+            .required{
+                width: 15%;
+            }
+            .volunteers{
+                width: 15%;
+            }
+            .h4-intable{
+                margin-bottom: 0;
+                line-height: 33px;
+            }
+        }
+    }
+}

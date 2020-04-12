@@ -1,0 +1,86 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>EDIT HOME</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <form [formGroup]="EditHomePageForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Banar</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <div class="image">
+                                                    <img src="../../../assets/images/homeimage.png" alt="english flag" width="100%" height="100%">   
+                                                </div>
+                                                <a class="deleteImage" href="#">Delete</a>
+                                                <input 
+                                                    type="file"
+                                                    (change)="getFiles($event)" 
+                                                    name="image"
+                                                    formControlName="image" 
+                                                    id="file" 
+                                                    class="inputfile chooseImage" >
+                                                <label class="uploade-image" for="file"> <i class="fas fa-upload"></i>Choose a file</label>  
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">About Us Text</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                 <!-- About us text in inglish-->
+                                             <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                             <div class="guide-en-message">Enter About Us Text In English</div>
+                                            
+                                                <textarea  
+                                                    class="form-control about-text" 
+                                                    name="about_text_en" 
+                                                    formControlName="about_text_en"
+                                                    placeholder="Enter The About Us Text In English">
+                                                </textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                  <!--About us text in arabic-->
+                                             <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                             <div class="guide-ar-message">Enter About Us Text In Arabic</div>
+                                                <textarea  
+                                                    class="form-control about-text" 
+                                                    name="about_text_ar" 
+                                                    formControlName="about_text_ar"
+                                                    placeholder="Enter The About Us Text In Arabic">
+                                                </textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,19 @@
+
+@import "../add-official-agencies/add-official-agencies.component.scss";
+@import "../add-country-city/add-country-city.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    td{
+                        .link{
+                            width: 64%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import "../edit-members-volunteers/edit-members-volunteers.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    select{
+                        width: 65%;
+                    }
+                    .notes{
+                        .for-defintion-en{
+                            margin-bottom: 8px;
+                        }
+                        .guide-en-message{
+
+                        }
+                        textarea{
+                            margin-bottom: 10px;
+                        }
+                        .for-defintion-ar{
+                            margin-bottom: 8px;
+                        }
+                        .guide-ar-message{
+                            top: 180px;
+                        }
+                    }
+                    .phone{
+                        width: 25%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,489 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+.container{
+    margin-top: 50px;
+    .table{
+        .check{
+            width: 5%;
+        }
+        .location{
+            width: 80%;
+            text-align: left;
+        }
+        .option{
+            width: 10%;
+        }
+        .country{ 
+           
+            .count-head{
+                display: block;
+                cursor: pointer;
+                margin-bottom: 15px;
+                margin-bottom: 15px;
+                color: #000;
+                .c-name{
+                    display: block;
+                    text-align: left;
+                    color: #3d3d3d;
+                    i{
+                        display: inline-block;
+                        font-size: 22px;
+                        margin-right: 5px;
+                    }
+                    .parent-h{
+                        display: inline-block;
+                        font-size: 20px; 
+                        font-weight: 700;
+                    }
+                }
+                .c-status{
+                    .diss{
+                        background-color: #fa983a;
+                    }
+                }  
+                
+            }
+            .parent-hr{
+                clear: both;
+                &:last-of-type{
+                    display: none;
+                }
+            }
+            .citiess{
+                width: 86%;
+                margin: 0 40px;  
+                display: none;
+               
+                li{
+                    padding: 8px 10px;
+                    list-style: none;
+                    .city-head{
+                        margin-bottom: 20px;
+                        cursor: pointer;
+                        .city-name{
+                            color: #4b4b4b;
+                            i{
+                                margin-right: 5px;
+                                font-size: 16px;
+                            }
+                            h6{
+                                font-size: 16px;
+                                font-weight: 700;
+                                display: inline-block;
+                            }
+                            
+                        }
+                        .city-detales{
+                            display: block;
+                            text-align: right;
+                            position: relative;
+                            .child-status{
+                                float: none;
+                                color: #FFF;
+                                font-size: 13px;
+                                font-weight: 500;
+                                padding: 4px 10px;
+                                border-radius: 15px;
+                                margin-left: 3px;
+                                cursor: pointer;
+                                i{
+                                    font-size: 11px;
+                                    color: #FFF;
+                                    margin-right: 3px;
+                                }
+                            }
+                            .reg{
+                                background-color: $exprtButtonBg;
+                                &:hover + .explan-reg{
+                                    display: inline-block;
+                                }
+                            }
+                            .not-reg{
+                                background-color: $buttonBg;
+                                &:hover + .explan-not-reg{
+                                    display: inline-block;
+                                }
+                            }
+                            .explan-not-reg{
+                                position: absolute;
+                                background-color: #dedbdb;
+                                padding: 7px 10px;
+                                color: #292929;
+                                top: -42px;
+                                right: -168px;
+                                font-size: 13px;
+                                border-radius: 6px;
+                                display: none;
+                                &:before{
+                                    content: "";
+                                    width: 0;
+                                    height: 0;
+                                    border-width: 7px;
+                                    border-style: solid;
+                                    border-color: #DDD transparent transparent transparent;
+                                    position: absolute;
+                                    left: 13px;
+                                    top: 33px;
+                                }
+                                
+                            }
+                            .explan-reg{
+                                position: absolute;
+                                background-color: #dedbdb;
+                                padding: 7px 10px;
+                                color: #292929;
+                                top: -42px;
+                                right: 44px;
+                                font-size: 13px;
+                                border-radius: 6px;
+                                display: none;
+                                &:before{
+                                    content: "";
+                                    width: 0;
+                                    height: 0;
+                                    border-width: 7px;
+                                    border-style: solid;
+                                    border-color: #DDD transparent transparent transparent;
+                                    position: absolute;
+                                    left: 150px;
+                                    top: 33px;
+                                }
+                            }
+    
+                        }
+                    
+                    }
+
+                    
+                    
+                    .placess{
+                        width: 86%; 
+                        margin: 0 40px;
+                        display: none;
+                      
+                        .place-name{
+                            i{
+                                margin-right: 3px;
+                                color: $tableRowColor;
+                                font-size: 11px;
+                            }
+                            h6{
+                                font-size: 14px;
+                                display: inline-block;
+                                color: $tableRowColor;
+                            }
+                        }
+                        .place-detales{
+
+                            .grandson-status{
+                                float: right;
+                                background-color: #10ac84;
+                                color: #FFF;
+                                font-size: 12px;
+                                font-weight: 500;
+                                margin-left: 3px;
+                                padding: 4px 10px;
+                                border-radius: 15px;
+                                cursor: pointer;
+                                i{
+                                    font-size: 10px;
+                                    color: #FFF;
+                                    margin-right: 3px;
+                                }
+                                
+                            }
+                            .reg{
+                                background-color: $exprtButtonBg;
+                                &:hover + .explan-reg{
+                                    display: inline-block;
+                                }
+                            }
+                            .not-reg{
+                                background-color: $buttonBg;
+                                &:hover + .explan-not-reg{
+                                    display: inline-block;
+                                }
+                            }
+                            .explan-not-reg{
+                                position: absolute;
+                                background-color: #dedbdb;
+                                padding: 7px 10px;
+                                color: #292929;
+                                top: -39px;
+                                right: -96px;
+                                font-size: 12px;
+                                border-radius: 6px;
+                                display: none;
+                                &:before{
+                                    content: "";
+                                    width: 0;
+                                    height: 0;
+                                    border-width: 7px;
+                                    border-style: solid;
+                                    border-color: #DDD transparent transparent transparent;
+                                    position: absolute;
+                                    left: 13px;
+                                    top: 32px;
+                                }
+                                
+                            }
+                            .explan-reg{
+                                position: absolute;
+                                background-color: #dedbdb;
+                                padding: 7px 10px;
+                                color: #292929;
+                                top: -39px;
+                                right: 60px;
+                                font-size: 12px;
+                                border-radius: 6px;
+                                display: none;
+                                &:before{
+                                    content: "";
+                                    width: 0;
+                                    height: 0;
+                                    border-width: 7px;
+                                    border-style: solid;
+                                    border-color: #DDD transparent transparent transparent;
+                                    position: absolute;
+                                    left: 104px;
+                                    top: 32px;
+                                }
+                            }
+                                
+
+                        }
+                    }
+                   
+                    
+                }
+            }
+        }
+    }
+}
+            
+
+.showww{
+    display: block!important;
+}
+
+
+
+
+       
+//                     .child-status{
+//                         float: right;
+//                         color: #FFF;
+//                         font-size: 13px;
+//                         font-weight: 500;
+//                         padding: 4px 10px;
+//                         border-radius: 15px;
+//                         margin-left: 3px;
+//                         cursor: pointer;
+//                         i{
+//                             font-size: 11px;
+//                             color: #FFF;
+//                             margin-right: 3px;
+//                         }
+//                     }
+//                     .reg{
+//                         background-color: $exprtButtonBg;
+//                         &:hover + .explan-reg{
+//                             display: inline-block;
+//                         }
+//                     }
+//                     .not-reg{
+//                         background-color: $buttonBg;
+//                         &:hover + .explan-not-reg{
+//                             display: inline-block;
+//                         }
+//                     }
+//                     .explan-not-reg{
+//                         position: absolute;
+//                         background-color: #dedbdb;
+//                         padding: 7px 10px;
+//                         color: #292929;
+//                         top: -35px;
+//                         right: -157px;
+//                         font-size: 13px;
+//                         border-radius: 6px;
+//                         display: none;
+//                         &:before{
+//                             content: "";
+//                             width: 0;
+//                             height: 0;
+//                             border-width: 7px;
+//                             border-style: solid;
+//                             border-color: #DDD transparent transparent transparent;
+//                             position: absolute;
+//                             left: 13px;
+//                             top: 33px;
+//                         }
+                        
+//                     }
+//                     .explan-reg{
+//                         position: absolute;
+//                         background-color: #dedbdb;
+//                         padding: 7px 10px;
+//                         color: #292929;
+//                         top: -35px;
+//                         right: 54px;
+//                         font-size: 13px;
+//                         border-radius: 6px;
+//                         display: none;
+//                         &:before{
+//                             content: "";
+//                             width: 0;
+//                             height: 0;
+//                             border-width: 7px;
+//                             border-style: solid;
+//                             border-color: #DDD transparent transparent transparent;
+//                             position: absolute;
+//                             left: 150px;
+//                             top: 33px;
+//                         }
+//                     }
+//                     .clildren-hr{
+//                         text-align: center;
+//                         width: 100%;
+//                         margin: 0;
+//                         position: relative;
+//                         top: 37px;
+//                     }
+//                     .main-city{
+//                         h6{
+//                             font-size: 14px;
+//                             display: inline-block;
+//                             color: $tableRowColor;
+//                         }
+//                         i{
+//                             margin-right: 3px;
+//                             color: $tableRowColor;
+//                             font-size: 11px;
+//                         }
+//                     }
+//                     .main-city::after{
+//                         color: $tableRowColor;
+//                     }
+//                     .place-menue{
+//                         position: relative!important;
+//                         top: 0;
+//                         left: 0;
+//                         border: none;
+//                         transform: none!important;
+//                         width: 86%; 
+//                         margin: 0 40px;
+//                         .places{
+//                             padding: 5px 10px;
+//                             position: relative;
+//                             a{
+//                                 i{
+//                                     margin-right: 3px;
+//                                     color: $tableRowColor;
+//                                     font-size: 11px;
+//                                 }
+//                                 h6{
+//                                     font-size: 14px;
+//                                     display: inline-block;
+//                                     color: $tableRowColor;
+//                                 }
+//                             }
+//                             .grandson-status{
+//                                 float: right;
+//                                 background-color: #10ac84;
+//                                 color: #FFF;
+//                                 font-size: 12px;
+//                                 font-weight: 500;
+//                                 margin-left: 3px;
+//                                 padding: 4px 10px;
+//                                 border-radius: 15px;
+//                                 cursor: pointer;
+//                                 i{
+//                                     font-size: 10px;
+//                                     color: #FFF;
+//                                     margin-right: 3px;
+//                                 }
+                                
+//                             }
+//                             .reg{
+//                                 background-color: $exprtButtonBg;
+//                                 &:hover + .explan-reg{
+//                                     display: inline-block;
+//                                 }
+//                             }
+//                             .not-reg{
+//                                 background-color: $buttonBg;
+//                                 &:hover + .explan-not-reg{
+//                                     display: inline-block;
+//                                 }
+//                             }
+//                             .explan-not-reg{
+//                                 position: absolute;
+//                                 background-color: #dedbdb;
+//                                 padding: 7px 10px;
+//                                 color: #292929;
+//                                 top: -35px;
+//                                 right: -104px;
+//                                 font-size: 12px;
+//                                 border-radius: 6px;
+//                                 display: none;
+//                                 &:before{
+//                                     content: "";
+//                                     width: 0;
+//                                     height: 0;
+//                                     border-width: 7px;
+//                                     border-style: solid;
+//                                     border-color: #DDD transparent transparent transparent;
+//                                     position: absolute;
+//                                     left: 13px;
+//                                     top: 32px;
+//                                 }
+                                
+//                             }
+//                             .explan-reg{
+//                                 position: absolute;
+//                                 background-color: #dedbdb;
+//                                 padding: 7px 10px;
+//                                 color: #292929;
+//                                 top: -35px;
+//                                 right: 54px;
+//                                 font-size: 12px;
+//                                 border-radius: 6px;
+//                                 display: none;
+//                                 &:before{
+//                                     content: "";
+//                                     width: 0;
+//                                     height: 0;
+//                                     border-width: 7px;
+//                                     border-style: solid;
+//                                     border-color: #DDD transparent transparent transparent;
+//                                     position: absolute;
+//                                     left: 104px;
+//                                     top: 32px;
+//                                 }
+//                             }
+
+//                         }
+//                         .grandson-hr{
+//                             text-align: center;
+//                             width: 100%;
+//                             margin: 0;
+//                             position: relative;
+//                             top: 0;
+//                         }
+//                     }
+
+                   
+//                 }
+                
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+

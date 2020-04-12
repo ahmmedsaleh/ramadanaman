@@ -1,0 +1,163 @@
+<app-upperbar></app-upperbar>
+<app-u-navbar></app-u-navbar>
+
+
+<!--start edit my profile-->
+<div class="add-user">
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-header">
+              <h3>Add VOLUNTEER</h3>
+              <div class="close" (click)="goback()">
+                  <span>x</span>
+              </div>
+            </div>
+            <form>
+                <div class="card-body">
+                    <table class="table table-bordered"> 
+                        <tr>
+                            <td class="title">Full Name</td>
+                            <td class="data">
+                                <!-- full name in inglish-->
+                                <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                <div class="guide-en-message">Enter Full Name In English</div>
+                                <div class="fullname">
+                                    <div class="row">
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="StNameEn"  
+                                                [(ngModel)] = "AddMyVolunteers.StNameEn"
+                                                class="form-control" 
+                                                placeholder="First name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="EdNameEn"  
+                                                [(ngModel)] = "AddMyVolunteers.EdNameEn"
+                                                class="form-control" 
+                                                placeholder="Second name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="RdNameEn"  
+                                                [(ngModel)] = "AddMyVolunteers.RdNameEn"
+                                                class="form-control" 
+                                                placeholder="Third name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="ThameEn"  
+                                                [(ngModel)] = "AddMyVolunteers.ThameEn"
+                                                class="form-control" 
+                                                placeholder="Last name">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--full name in arabic-->
+                                <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                <div class="guide-ar-message">Enter Full Name In Arabic</div>
+                                <div class="fullname">
+                                    <div class="row">
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="StNameAr"  
+                                                [(ngModel)] = "AddMyVolunteers.StNameAr"
+                                                class="form-control" 
+                                                placeholder="First name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="EdNameAr"  
+                                                [(ngModel)] = "AddMyVolunteers.EdNameAr"
+                                                class="form-control" 
+                                                placeholder="Second name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="RdNameAr"  
+                                                [(ngModel)] = "AddMyVolunteers.RdNameAr"
+                                                class="form-control" 
+                                                placeholder="Third name">
+                                        </div>
+                                        <div class="col section">
+                                            <input 
+                                                type="text" 
+                                                name="ThameAr"  
+                                                [(ngModel)] = "AddMyVolunteers.ThameAr"
+                                                class="form-control" 
+                                                placeholder="Last name">
+                                        </div>
+                                    </div>
+                                </div>  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Date Of Birth</td>
+                            <td class="data">
+                                <input 
+                                    type="date" 
+                                    class="form-control day-of-birth" 
+                                    name="BirthDate"  
+                                    [(ngModel)] = "AddMyVolunteers.BirthDate"
+                                    placeholder="Enter Date Of Birth">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Phone Number</td>
+                            <td class="data">
+                                <input 
+                                    type="text" 
+                                    class="form-control phoneNom" 
+                                    name="Phone"  
+                                    [(ngModel)] = "AddMyVolunteers.Phone"
+                                    placeholder="Enter Phone Number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="title">Gender</td>
+                            <td class="data">
+                                <div class="gender">
+                                    <input  
+                                        type="radio" 
+                                        id="Emale" 
+                                        name="gender" 
+                                        value="male" 
+                                        (change)="radioGenderChangeHandeler($event)">
+                                    <label for="male">Male</label>
+                                    <input  
+                                        type="radio" 
+                                        id="Efemale" 
+                                        name="gender" 
+                                        value="female" 
+                                        (change)="radioGenderChangeHandeler($event)">
+                                    <label for="female">female</label> 
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-footer text-muted">
+                    <button class='btn btn-primary save-button' (click)="showww()"><i class="far fa-save"></i>Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--end edit my profile-->
+
+
+
+<!--start footer-->
+<app-footer></app-footer>
+<!--end footer-->
+
+<!--strat copyright-->
+<app-u-copyright></app-u-copyright>
+<!--end copyright-->

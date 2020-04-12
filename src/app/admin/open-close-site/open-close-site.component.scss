@@ -1,0 +1,20 @@
+@import "../edit-members-volunteers/edit-members-volunteers.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            table{
+                tr{
+                    .data{
+                        .guide-ar-message{
+                            top: 166px;
+                        }
+                        textarea{
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="search">
+    <form >
+        <div>
+            <span>
+                <select name="Country" class="search-select" [(ngModel)] = "OASearchResult.Country">
+                    <option disabled [ngValue]="null"> -- Country --</option>
+                    <option *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name_en}}</option>
+                </select>
+            </span>
+            <button  type="submit" class="btn search-button" (click)="showww()"> Serach</button>
+        </div>
+    </form>
+</div>

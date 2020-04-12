@@ -1,0 +1,153 @@
+$mainUserColor : #857d33;
+$upperbarFontColor : #2f3542;
+
+
+/* start index page */
+.intro-page{
+    height: 860px;
+    position: relative;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+       
+    
+    .cover{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+    }
+    .logo{
+        position: absolute;
+        top: 25px;
+        left: 537px;
+        width: 270px;
+        background-color: #171616;
+        opacity: 0.8;
+        padding: 33px;
+        border-radius: 50%;
+        img{
+            width: 100%;
+        }
+    }
+    .nice-message{
+        position: absolute;
+        top: 158px;
+        left: 787px;
+        padding: 10px;
+        background-color: #FFF;
+        margin: 10px 0;
+        border-left: 5px solid $mainUserColor;
+        opacity: 0.8;
+        font-size: 14px;
+        font-weight: 500;
+        display: none;
+    }
+    .main-part{
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #000;
+        opacity: 0.7;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        &:hover{
+            opacity: 0.9;
+        }
+        .content{
+            position: relative;
+            top: 40px;
+            img{
+                width: 66px;
+                height: 43px;
+                margin-bottom: 10px;
+            }
+            h3{
+                font-size: 20px;
+                color: $upperbarFontColor;
+                
+            }
+            i{
+                font-size: 40px;
+                color: $mainUserColor;
+            }
+        }
+    }
+    .parts{
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background-color: #fff;
+        color: #000;
+        opacity: 0.7;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        &:hover{
+            opacity: 0.9;
+        }
+        .content{
+            position: relative;
+            top: 40px;
+            img{
+                width: 60px;
+                height: 36px;
+                margin-bottom: 10px;
+            }
+            h3{
+                font-size: 19px;
+                color: $upperbarFontColor;
+                
+            }
+            i{
+                font-size: 32px;
+                color: $mainUserColor;
+            }
+        }
+    }
+    .part1{
+        top: 420px;
+        left: 547px;
+        width: 250px;
+        height: 190px;
+    }
+    .part2{
+    
+        top: 97px;
+        left: 170px;
+    }
+    .part3{
+        top: 199px;
+        left: 12px;
+    }
+    .part4{
+        top: 386px;
+        left: 5px;
+    }
+    .part5{
+        bottom: 40px;
+        right: 170px;
+    }
+    .part6{
+        bottom: 143px;
+        right: 12px;
+    }
+    .part7{
+        bottom: 332px;
+        right: 5px;
+    }
+   
+}
+/*end index page */

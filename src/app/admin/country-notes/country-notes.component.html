@@ -1,0 +1,101 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>COUNTRY NOTES</h3>
+                        </div>
+                        <form [formGroup]="CountryNoteForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr class="countries">
+                                        <td class="title">Country</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select class="form-control country_id" name = "country_id"  formControlName="country_id"
+                                                [ngClass]="{ 'is-invalid': submitted && f.country_id.errors }">
+                                                    <option disabled [ngValue]="null">-- Country --</option>
+                                                    <option  *ngFor = " let country of Countries" [ngValue]="country.id">{{country.name_en}}</option>
+                                                </select>
+                                                <div *ngIf="submitted && f.country_id.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.country_id.errors.required">Country is required</div>
+                                                </div>  
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Notes</td>
+                                        <td class="data">
+                                            <div class="form-group notes">
+                                                <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                <div class="guide-en-message">Enter Notes In English</div>
+                                                <textarea 
+                                                    class="form-control" 
+                                                    placeholder="Enter Notes...." 
+                                                    name="note_en"  
+                                                    formControlName="note_en"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.note_en.errors }">
+                                                </textarea>
+                                                <div *ngIf="submitted && f.note_en.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.note_en.errors.required">Note is required</div>
+                                                    <div *ngIf="f.note_en.errors.minlength">Note must be at least 12 characters</div>
+                                                </div>
+                                                <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                <div class="guide-ar-message">Enter Notes In Arabic</div>
+                                                <textarea 
+                                                    class="form-control" 
+                                                    placeholder="Enter Notes...."
+                                                    name="note_ar"  
+                                                    formControlName="note_ar"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.note_ar.errors }">
+                                                </textarea>
+                                                <div *ngIf="submitted && f.note_ar.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.note_ar.errors.required">Note is required</div>
+                                                    <div *ngIf="f.note_ar.errors.minlength">Note must be at least 12 characters</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Phone</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control phone" 
+                                                    name="phone"  
+                                                    formControlName="phone" 
+                                                    placeholder="Mob.No.."
+                                                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                                                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.phone.errors.required">Phone is required</div>
+                                                        <div *ngIf="f.phone.errors.minlength">Phone must be at least 9 Numbers</div>
+                                                    </div>    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button' ><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

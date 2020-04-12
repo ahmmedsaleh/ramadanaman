@@ -1,0 +1,22 @@
+
+@import "../add-customers/add-customers.component.scss";
+@import "../edit-members-volunteers/edit-members-volunteers.component.scss";
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    .data{
+                        img{
+                            margin-bottom: 10px;
+                        }
+                        .guide-ar-message{
+                            top: 172px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

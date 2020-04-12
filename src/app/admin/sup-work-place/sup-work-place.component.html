@@ -1,0 +1,101 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>SITE SUPERVISOR</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="title">Full Name</td>
+                                    <td class="data">
+                                        <span>Ahmed Hashem Saleh</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Phone</td>
+                                    <td class="data">
+                                        <span>0501404662</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Email</td>
+                                    <td class="data">
+                                        <span>ahmedhashem.ah988@gmail.com</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Country</td>
+                                    <td class="data">
+                                        <span>United Arab Emirates</span>
+                                    </td>
+                                </tr>
+                               <tr>
+                                   <td class="title">Voluntary Hours</td>
+                                   <td class="data">
+                                        <table class="table table-bordered">
+                                            <tr>
+                                                <td>Location</td>
+                                                <td class="hours">Hours</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="locations">
+                                                    <form>
+                                                        <input class="sup-location" id="sup-location" type="checkbox" name="sup-location">
+                                                        <label for="vehicle1"> The Location In The Country</label>
+                                                    </form>
+                                                </td>
+                                                <td class="hours-value">
+                                                    <form>
+                                                        <input type="number" class="hours-no form-control" name="hours-no" min="1" max="1" value="1">
+                                                    </form>
+                                                </td>     
+                                            </tr>
+                                        </table>
+                                   </td>
+                               </tr>
+                            </table>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a href="#" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

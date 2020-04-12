@@ -1,0 +1,30 @@
+@import "../volunteers-counter/volunteers-counter.component.scss";
+
+.container{
+    .table{
+        tr{
+           
+            .place{
+                width: 25%;
+            }
+            .country{
+                width: 18%;
+            }
+            .city{
+                width: 13%;
+            }
+            .required{
+                width: 14%;
+            }
+            .volunteers{
+                width: 14%;
+            }
+            .present{
+                width: 8%;
+            }
+            .absent{
+                width: 8%;
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+
+@import "../volunteers-report/volunteers-report.component.scss";
+
+
+.container{
+    .card{
+        clear: both;
+        margin-bottom: 15px;
+        .card-header{
+            background-color: #333;
+            text-align: left;
+            h3{
+                color: #FFF;
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .vol-rep-table{
+        .card{
+            .card-header{
+                background-color: #535c68;
+            }
+            .card-body{
+                .table{
+                    tr{
+                        .country{
+                            width: 50%;
+                            text-align: left;
+                        }
+                        .vistiros{
+                            width: 25%;
+                        }
+                        .page-view{
+                            width: 25%;
+                        }
+                    }
+                    tfoot{
+                        color: #FFF;
+                        background-color: #6c6c6d;
+                        td{
+                            padding: 5px 10px;
+                        }
+                        .today{
+                            text-align: left;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

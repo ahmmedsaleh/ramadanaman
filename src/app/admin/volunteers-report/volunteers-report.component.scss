@@ -1,0 +1,78 @@
+@import "../../../styles.scss";
+
+.dashboard-container{
+    overflow: hidden;
+    .side-bar{
+        margin: 0;
+        padding: 0;
+        max-width: 280px;
+    }
+    .right-content{
+        margin: 0;
+        padding: 0;
+        min-width: 1095px;
+        max-width: 1095px;
+        .right-panel{
+            .container{
+                padding: 0 50px 50px 30px;
+                margin-top: 50px;
+                .table{
+                    border-color: $tableBorderColor;
+                    margin-bottom: 10px;
+                    box-shadow: 1px 9px 4px -4px #949494;
+                    tr{
+                        .location{
+                            width: 40%;
+                        }
+                        &:first-child td{
+                            background-color: $tableHeadBgColor;
+                            color: $tableHeadColor;
+                        }
+                        td{
+                            background-color: $tableRowBg;
+                            vertical-align: middle;
+                            padding: 9px;
+                            font-size: $tableRowFontSize;
+                            color: $tableRowColor;
+                            font-weight: $tableRowFontWeight;
+                            .h4-intable{
+                                text-align: left;
+                                font-size: $h4FontSizeInTable;
+                                color: $h4ColorInTable;
+                            }
+                            .country-u-h4{
+                                text-align: left;
+                                font-size: 14px;
+                                color: $countryFontColor;
+                                font-weight: 400!important;
+                            }
+                            .fullLocation{
+                                display: inline-block;
+                                float: left;
+                                
+                            }
+                            .locMap{
+                                display: inline-block;
+                                float: right;
+                                width: 35px;
+                                height: 35px;
+                                line-height: 39px;
+                                background-color: $locMapBg;
+                                border-radius: 5px;
+                                i{
+                                    color: $locMapIconColor;
+                                    font-size: 20px;
+                                }
+                            }
+                            h5{
+                                font-size: $tableRowFontSize;
+                                color: $tableRowColor;
+                            }
+                            
+                        }
+                    }  
+                }
+            }
+        }
+    }
+}

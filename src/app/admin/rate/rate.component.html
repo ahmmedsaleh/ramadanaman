@@ -1,0 +1,103 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="table-responsive">
+                        <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                            <tr>
+                                <td class="how">How to rate your experiment</td>
+                                <td class="n-o-rating">No Of Rating</td>
+                                <td class="pre">Percentage</td>
+                                <td class="who">View Who Rate</td>
+                            </tr>
+                            <tr>
+                                <td class="how-rate">
+                                    <h4 class="h4-intable">Very Satisfied</h4>
+                                </td>
+                                <td>
+                                    <span class="rating-no">40</span>                                   
+                                </td>
+                                <td>
+                                    <meter min="0" max="100" value="80" low="40" high="70" optimum="100"></meter>
+                                </td>
+                               
+                                <td>
+                                    <a href="#" routerLink='/ViewRate' class="view-button">
+                                        <i class="far fa-eye"></i>View
+                                    </a>
+                                </td>
+                          </tr>	
+
+                          <tr>
+                            <td class="how-rate">
+                                <h4 class="h4-intable">Satisfied</h4>
+                            </td>
+                            <td>
+                                <span class="rating-no">6</span>                                   
+                            </td>
+                            <td>
+                                <meter min="0" max="100" value="18" low="40" high="80" optimum="100"></meter>
+                            </td>
+                           
+                            <td>
+                                <a href="#" routerLink='/ViewRate' class="view-button">
+                                    <i class="far fa-eye"></i>View
+                                </a>
+                            </td>
+                      </tr>	
+
+                      <tr>
+                        <td class="how-rate">
+                            <h4 class="h4-intable">Not Satisfied</h4>
+                        </td>
+                        <td>
+                            <span class="rating-no">3</span>                                   
+                        </td>
+                        <td>
+                            <meter min="0" max="100" value="6" low="40" high="80" optimum="100"></meter>
+                        </td>
+                       
+                        <td>
+                            <a href="#" routerLink='/ViewRate' class="view-button">
+                                <i class="far fa-eye"></i>View
+                            </a>
+                        </td>
+                  </tr>	
+
+                  <tr>
+                    <td class="how-rate">
+                        <h4 class="h4-intable">Not Rated</h4>
+                    </td>
+                    <td>
+                        <span class="rating-no">1</span>                                   
+                    </td>
+                    <td>
+                        <meter min="0" max="100" value="2" low="40" high="80" optimum="100"></meter>
+                    </td>
+                   
+                    <td>
+                        <a href="#" routerLink='/ViewRate' class="view-button">
+                            <i class="far fa-eye"></i>View
+                        </a>
+                    </td>
+                    </tr>	
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

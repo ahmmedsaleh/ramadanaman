@@ -1,0 +1,98 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel"> 
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <a href='#'  class='btn btn-primary print-botton'><i class="fas fa-print"></i>Print</a>
+                    <div class="table-responsive">
+                        <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                            <tr>   
+                                <td class="location">Country</td> 
+                                <td class="option">Volunteers Count</td>
+                            </tr>
+                            <tr *ngFor="let country of Countries">   
+                                <td>
+                                    <div class="country">
+                                        <div class="count-head" (click)="showCities($event)">
+                                            
+                                            <div class="c-name">
+                                                <i class="fas fa-home"></i>
+                                                <h3 class="parent-h"> {{country.name_en}}</h3>   
+                                            </div>
+                                         
+                                        </div>
+                                        <div class="citiess text-left" *ngFor="let city of country.cities"  >
+                                            <li>
+                                                <div class="city-head">
+                                                    <div class="row">
+                                                        <div class="col-7">
+                                                            <div class="city-name" (click)="showPlaces($event)">
+                                                                <i class="fas fa-landmark"></i>
+                                                                <h6>{{city.name_en}}</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <div class="city-detales">
+                                                             
+                                                                
+                                                                <span class="child-status reg"><i class="fas fa-check"></i>65</span>
+                                                                <span class="explan-reg">Register In Ramadan Dayes</span>
+                                                                <span class="child-status not-reg"><i class="fas fa-times"></i>8</span>
+                                                                <span class="explan-not-reg">Not Register In Ramadan Dayes</span>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                   
+                                                    </div>  
+                                                </div>
+                                               
+                                                <div class="placess" *ngFor="let place of city.places">
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-7">
+                                                                <div class="place-name">
+                                                                    <i class="fas fa-location-arrow"></i>
+                                                                    <h6>{{place.name_en}}</h6>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-5">
+                                                                <div class="place-detales">
+                                                                    <span class="grandson-status not-reg"><i class="fas fa-times"></i>8</span>
+                                                                    <span class="explan-not-reg">Register But Not Attend</span>
+                                                                    <span class="grandson-status reg"><i class="fas fa-check"></i>65</span>
+                                                                    <span class="explan-reg">Register And Attend</span>
+                                                                </div>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </li>
+                                            <hr class="clildren-hr">
+                                        </div>
+                                    </div>    
+                                </td>   
+                                <td>
+                                    <span class="country-count">75</span>
+                                </td>
+                            </tr>	
+                        </table>
+                    </div>
+                    <a href="#" class='btn btn-primary exbut'><i class="fas fa-download"></i>Export</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,51 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container"> 
+                    <app-volsearch></app-volsearch>
+                    <div class="vol-rep-table">
+                        <div class="table-responsive">
+                            <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td class="location">Location</td>
+                                    <td>Days</td>
+                                    <td>Volunteers</td>
+                                </tr>
+                                <tr *ngFor="let place of Places">
+                                    <td><input [value]="place.id" type="checkbox"></td>
+                                    <td>
+                                        <div class="fullLocation">
+                                            <h4 class="h4-intable">{{place.name_en}} </h4>
+                                            <h5 class="country-u-h4">{{place.city.name_en}}</h5>
+                                        </div>
+                                        <a [href]="place.map_url" class="locMap">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <span>{{place.days}}</span>
+                                    </td>
+                                    <td></td>
+                                </tr>		
+                            </table>
+                        </div>
+                        <a href="#" class='btn btn-primary exbut'><i class="fas fa-download"></i>Export</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

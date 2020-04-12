@@ -1,0 +1,365 @@
+<div class="upperbar">
+    <div class="container">
+        <div *ngIf="showLogReg" class="log-reg">
+            <div class="signup-link">
+                <a (click)="showSignupForm()">
+                    <i class="fas fa-user-plus"></i>New Volunteer
+                </a>
+            </div>
+            <div class="login-link">
+                <a (click)="showLoginForm()">
+                    <i class="fas fa-sign-in-alt"></i>Login
+                </a>
+            </div>
+        </div> 
+        <div *ngIf="showLog" class="logedin">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ahmed</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#" routerLink='/MyProfile' Action>
+                    <i class="fa fa-user"></i>My Profile
+                </a>
+                <a class="dropdown-item" href="#" routerLink='/Profile'>
+                    <i class="far fa-calendar-alt"></i>Calendar
+                </a>
+                <a class="dropdown-item" href="#" >
+                    <i class="fas fa-sign-out-alt"></i>Log Out
+                </a>
+            </div>
+        </div>
+        <div class="lang">
+            <div class="contain">
+                <div class="english">
+                    <a href="#">
+                        <img src="../../../assets/images/englishflag.png" alt="English">
+                        <span>EN</span>
+                    </a>
+                </div>
+                <div class="arabic">
+                    <a href="#">
+                        <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="English">
+                        <span>AR</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--start login form-->
+<div class="login-form">
+    <div class="close" (click)=hideLogin()>
+        x
+    </div>
+    <div class="title">
+        <i class="fas fa-users"></i>
+        <h3>Volunteers Login</h3>
+    </div>
+    <form  >
+        <label><i class="fas fa-user"></i></label>
+        <input 
+            pattern=".{4,}"
+            title="User Name Must Be 4 Char"
+            type="text" 
+            class="username" 
+            name="Username" 
+            [(ngModel)] = "LoginData.Username" 
+            placeholder="Enter User Name Or Mobile Number"
+            required>
+        <label><i class="fas fa-unlock-alt"></i></label>
+        <input 
+            type="password" 
+            class="password" 
+            name="Username" 
+            [(ngModel)] = "LoginData.Password" 
+            placeholder="Enter Password"
+            required>
+        <div class="remember">
+            <input 
+                type="checkbox" 
+                class="remme" 
+                id="remrmber"
+                (change)="CheckRememberChangeHandeler($event)">
+            <label for="remrmber">Remember Me</label>
+        </div>
+        <a href="#">Forget Password?</a>
+        <button type="submit" class="btn" (click)="showwww()" >Sign In</button>
+
+    </form>
+</div>
+<!--end login form-->
+
+
+
+<!--start sign up form-->
+<div class="signup-form">
+    <div class="close" (click)=hideSignUp()>
+        x
+    </div>
+    <div class="title">
+        <i class="fas fa-user-plus"></i>
+        <h3>Register</h3>
+    </div>
+    <form #f = "ngForm">
+        <div class="form-group">
+            <label class="Registeration-lable" for="validationTooltip04">
+                Registeration Type : 
+            </label>
+            <select class="regType" name = "RegType" [(ngModel)] = "SignupData.RegType">
+                <option disabled [ngValue]="null"> -- Choose --</option>
+                <option value="person">Person</option>
+                <option value="family">Family</option>
+                <option value="orgnization">Orgnization</option>
+            </select>
+        </div>
+
+        <div class="form-group select-agency-group">
+            <label class="Registeration-lable" for="validationTooltip04">
+                Select Agency : 
+            </label>
+
+            <select class="select-agency" name = "AgencyType" [(ngModel)] = "SignupData.AgencyType">
+                <option disabled [ngValue]="null"> -- Choose --</option>
+                <option *ngFor = " let agancy of Agancies" [ngValue]="agancy.id">{{agancy.name}}</option>
+            </select>
+
+            <div class="acadimic-id">
+                <label class="Registeration-lable" for="validationTooltip04">
+                    ID : 
+                </label>
+                <input 
+                    type="text" 
+                    class="acc-id" 
+                    name="AcadimicId" 
+                    [(ngModel)] = "SignupData.AcadimicId" 
+                    placeholder="Your ID"
+                    required>
+            </div>
+            
+        </div>
+        <div class="form-group name-form name-en-form">
+            <label class="name-lable" for="validationTooltip04">
+                Name : <br>
+                <img class="for-defintion-en" src="../../../assets/images/englishflag.png">
+                <div class="guide-en-message">Enter Full Name In English</div>
+                
+            </label>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="StNameEn" 
+                [(ngModel)] = "SignupData.StNameEn" 
+                placeholder="Your Name"
+                required>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="EdNameEn" 
+                [(ngModel)] = "SignupData.EdNameEn" 
+                placeholder="Father Name"
+                required>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="RdNameEn" 
+                [(ngModel)] = "SignupData.RdNameEn" 
+                placeholder="Grandfather Name"
+                required>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="ThameEn" 
+                [(ngModel)] = "SignupData.ThameEn" 
+                placeholder="Family Name"
+                required>
+        </div>
+        <div class="form-group name-form name-ar-form">
+            <label class="name-lable" for="validationTooltip04">
+                Name : <br>
+                <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" >
+                <div class="guide-ar-message">Enter Full Name In Arabic</div>
+            </label>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="StNameAr" 
+                [(ngModel)] = "SignupData.StNameAr" 
+                placeholder="Your Name"
+                required>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="EdNameAr" 
+                [(ngModel)] = "SignupData.EdNameAr" 
+                placeholder="Father Name"
+               required>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="RdNameAr" 
+                [(ngModel)] = "SignupData.RdNameAr" 
+                placeholder="Grandfather Name"
+                required>
+            <input 
+                pattern=".{3,}"
+                title="User Name Must Be 3 Char"
+                type="text" 
+                class="name" 
+                name="ThameAr" 
+                [(ngModel)] = "SignupData.ThameAr" 
+                placeholder="Family Name"
+                required>
+        </div>
+        <div class="form-group">
+            <label class="Registeration-lable" for="validationTooltip04">
+                Date Of Birth : 
+            </label>
+            <input  
+                class="birth-date" 
+                type="date"  
+                name="BirthDate" 
+                [(ngModel)] = "SignupData.BirthDate"
+                required >
+        </div>
+        <div class="form-group">
+            <label class="Registeration-lable" for="validationTooltip04">
+                Gender : 
+            </label>
+            <input  type="radio" id="male" name="gender" value="male" (change)="radioGenderChangeHandeler($event)">
+            <label for="male">Male</label>
+            <input  type="radio" id="female" name="gender" value="female" (change)="radioGenderChangeHandeler($event)">
+            <label for="female">Female</label> 
+        </div>
+        <div class="form-group">
+            <label class="Registeration-lable" for="validationTooltip04">
+                Nationality : 
+            </label>
+
+            <select  name = "AgencyType" [(ngModel)] = "SignupData.Nationality">
+                <option disabled [ngValue]="null"> -- Choose --</option>
+                <option *ngFor = " let nationality of Nationalities" [ngValue]="nationality">{{nationality}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="Registeration-lable" for="validationTooltip04">
+                City : 
+            </label>
+
+            <select  name = "AgencyType" [(ngModel)] = "SignupData.City">
+                <option disabled [ngValue]="null"> -- Choose --</option>
+                <option *ngFor = " let city of Cities" [ngValue]="city.id">{{city.name}}</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <div class="form-group news-letter">
+                <input type="checkbox" class="news" id="news" checked (change)="CheckNewsChangeHandeler($event)">
+                <label class="news-lable" for="news">Would you like to inform you of our charitable initiatives?</label>
+            </div>
+        </div>
+
+        <div class="login-info">
+            <h4 class="login-info">Login Information</h4>
+            <hr>
+            <div class="form-group">
+                <label class="Registeration-lable" for="validationTooltip04">
+                    User Name : 
+                </label>
+                <input 
+                    pattern=".{4,}"
+                    title="User Name Must Be 4 Char"
+                    type="text" 
+                    class="username" 
+                    name="Username" 
+                    [(ngModel)] = "SignupData.Username" 
+                    placeholder="User Name"
+                    required>
+                <label class="Registeration-lable" for="validationTooltip04">
+                    Phone Number : 
+                </label>
+                <input 
+                    pattern=".{10,}"
+                    title="Phone Number Must Be 10 Number"
+                    type="text" 
+                    class="number" 
+                    name="Phone" 
+                    [(ngModel)] = "SignupData.Phone" 
+                    placeholder="Your Number"
+                    required>
+            </div>
+            <div class="form-group">
+                <label class="Registeration-lable" for="validationTooltip04">
+                    Email : 
+                </label>
+                <input 
+                    type="email" 
+                    class="email" 
+                    name="Email" 
+                    [(ngModel)] = "SignupData.Email" 
+                    placeholder="Your Email"
+                    required>
+            </div>
+            <div class="form-group">
+                <label class="Registeration-lable" for="validationTooltip04">
+                    Password : 
+                </label>
+                <input 
+                    minlength="6" 
+                    type="password" 
+                    class="email" 
+                    name="Password" 
+                    [(ngModel)] = "SignupData.Password" 
+                    placeholder="Your Password"
+                    required>
+            </div>
+            <div class="form-group">
+                <label class="Registeration-lable" for="validationTooltip04">
+                    Confirm Password : 
+                </label>
+                <input
+                    minlength="6"  
+                    type="password" 
+                    class="email" 
+                    name="ConfirmPassword"  
+                    placeholder="Write Your Password Again"
+                    required>
+            </div>
+            <div class="form-group terms-group">
+                <input type="checkbox" class="terms" id="terms" (change)="CheckTermsChangeHandeler($event)">
+                <label class="terms-lable" for="terms">I agree with all <a (click)="showTerms()" >Terms & Conditions</a></label>
+                <div class="terms-cond">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>We request everyone to be patient and for the interests of the public interest, Please follow the below instructions:</h4>
+                            <span class="hide" (click)="hideTerms()">x</span>
+                        </div>
+                        <div class="card-body">
+                            <li>The obligation to register, also provide correct information and commitment to the general rules of volunteerism.</li>
+                            <li>Each city supervisor has the right to exclusion and annexation as required for working interest.</li>
+                            <li>The locations supervisor, he is the in charge person for the packing and distributing, so we request that to follow his instructions before starting the work and after it.</li>
+                            <li>Please make sure to put on the campaign vest under the name of "Ramadan Aman campaign"</li>
+                            <li>Policemen advice are very important, please make sure to follow their instructions.</li>
+                            <li>For all the social media that will present during the campaign, you can not release any of your content before asking the chairman of the campaign committee and take the approval </li>
+                            <li>Show team spirit and avoid any argument for the best of the public interest </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn" (click)="createOrUpdatePolicy(f)" (click)= "showww()" >Register</button>
+    </form>
+</div>
+<!--end sign up form-->

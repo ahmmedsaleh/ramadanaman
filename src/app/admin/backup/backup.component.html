@@ -1,0 +1,97 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                          <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Create a New Backup
+                              </button>
+                            </h2>
+                          </div>
+                      
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                              <p class="info">Make a backup of the database file in the [sql]. The database can be restored by this file later.</p> 
+                              <span class="note">Note: files are not copied .. site backups of the database only.</span>
+                              <a href='#' routerLink='/AddCountriesCites' class='btn btn-primary top-add-button'><i class="fas fa-plus"></i>Create a New Backup</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Restoring a Backup
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p class="info">You can restore the database through the file [sql]. Select the file from your computer.</p> 
+                                <span class="note">Note: restore the database will lead to lost any data you've added recently</span>
+                                <a href='#' routerLink='/AddCountriesCites' class='btn btn-primary top-add-button'><i class="fas fa-window-restore"></i>Restore</a>
+                                <input type="file" name="file" id="file" class="inputfile chooseImage" />
+                                <label class="uploade-image" for="file"> <i class="fas fa-upload"></i>Choose a file</label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Previous Backup
+                              </button>
+                            </h2>
+                          </div>
+                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <p class="previous">Note: Click to download the file right-Alaiml and select Save As or Save Target As</p>
+                                <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                                    <tr>
+                                        <td class="link">File Link</td>
+                                        <td class="date">Date</td>
+                                        <td class="option">Options</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a class="back-link" href="#" >db-backup-1448286926-b3cc70afc4c028e3c05026529d8cdd2e.sql</a>
+                                        </td>
+                                        <td>
+                                            <span>23-11-2015</span>
+                                        </td>
+                                        <td>
+                                            <div class="row ed-option">
+                                                <a href="#" routerLink='/EditCitySupervisors' class="edit-option">
+                                                    <i class="far fa-edit"></i>Restore
+                                                </a>
+                                                <a href="#"  class="delete-option">
+                                                    <i class="far fa-trash-alt"></i>Delete
+                                                </a>
+                                            </div>
+                                        </td>
+                                  </tr>	
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

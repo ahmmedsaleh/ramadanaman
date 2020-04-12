@@ -1,0 +1,120 @@
+<app-upperbar></app-upperbar>
+<app-u-navbar></app-u-navbar>
+
+<!--start profile page-->
+<div class="profile">
+    <div class="calender">
+        <div class="container">
+          <div class="contain">
+            <div class="calender-body">
+              <div class="container">
+                  <div class="head">
+                    <i class="far fa-calendar-alt"></i>
+                    <h2 class="h1">Ramadan Calender</h2>
+                  </div>
+                  <div class="username">
+                    <form>
+                        <div class="form-group">
+                            <label class="Registeration-lable" for="validationTooltip04">
+                                User Name : 
+                            </label>
+                            <select  required>
+                                <option selected disabled value="">Choose...</option>
+                                <option value="carent">Parent</option>
+                                <option value="child1">Child1</option>
+                                <option value="child2">Child2</option>
+                            </select>
+                        </div>
+                    </form>
+                  </div>
+                <hr>
+                <div class="row text-center">
+
+                  <div class="ramadan-days" *ngFor="let day of ReservedDayes" [id]="day.id" >
+                    <div [id]="day.id" [class.chOpacity]="day.value" class="maincover"></div>
+                    <div class="content" (click)="SelectType($event)">
+                     
+                      <h4>{{day.id}}</h4>
+                      <div class="location-type">
+                        <button class="btn" (click)="selectCityLoc($event)">Distribution</button>
+                        <button class="btn" (click)="selectCityLoc($event)">Filling</button>
+                      </div>
+                      <div class="cityLoc">
+                        <div class="cover">
+ 
+                        </div>
+                        <form class="day-form">
+                          <div class="form-group">
+                            <select name="City" class="search-select" [(ngModel)] = "UserRegDay.City">
+                              <option disabled [ngValue]="null"> -- City --</option>
+                              <option *ngFor = " let city of Cities" [ngValue]="city.id">{{city.name}}</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <select name="Place" class="search-select" [(ngModel)] = "UserRegDay.Place">
+                              <option disabled [ngValue]="null"> -- Place --</option>
+                              <option *ngFor = " let place of Places" [ngValue]="place.id"> {{place.name}}</option>
+                          </select>
+                          </div>
+                          <button  type="submit" class="btn saveeee" (click)="savee($event)"> Save</button>
+                        </form>
+                      </div>
+
+
+                      <div class="edit-remove-day">
+                        <button class="btn " (click)="EditCityLoc($event)">
+                          <div class="btn-couver-edit"></div>
+                          <i class="far fa-edit"></i>Edit
+                        </button>
+                        <button class="btn" (click)="DeleteCityLoc($event)">
+                          <div class="btn-couver-del"></div>
+                          <i class="far fa-trash-alt"></i>Delete
+                        </button>
+                      </div>
+                      <div class="edit-day">
+                        <div class="cover">
+                        </div>
+                        <form class="day-form">
+                          <div class="form-group">
+                            <select name="City" class="search-select" [(ngModel)] = "UserRegDay.City">
+                              <option disabled [ngValue]="null"> -- City --</option>
+                              <option *ngFor = " let city of Cities" [ngValue]="city.id">{{city.name}}</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <select name="Place" class="search-select" [(ngModel)] = "UserRegDay.Place">
+                              <option disabled [ngValue]="null"> -- Place --</option>
+                              <option *ngFor = " let place of Places" [ngValue]="place.id"> {{place.name}}</option>
+                          </select>
+                          </div>
+                          <button  type="submit" class="btn saveeee" (click)="savee($event)"> Save</button>
+                        </form>
+                      </div>
+                   
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+          <div class="notes">
+            <form>
+                <label>Notes :</label>
+                <textarea name="Note" [(ngModel)] = "UserNotes.Note"  placeholder="Enter Your Notes"></textarea>
+                <button class="btn test" (click)="testttt()">Send</button>
+            </form>
+        </div>  
+      </div>    
+    </div>
+</div>
+<!--end profile page-->
+
+
+
+<!--start footer-->
+<app-footer></app-footer>
+<!--end footer-->
+
+<!--strat copyright-->
+<app-u-copyright></app-u-copyright>
+<!--end copyright-->

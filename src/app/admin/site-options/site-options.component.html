@@ -1,0 +1,579 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <!--start contain card-->
+                    <div class="card contain-card">
+                        <div class="card-header">
+                            <h3>SITE OPTIONS</h3> 
+                        </div>
+                        <div class="card-body">
+                             <!--start site options-->
+                            <div class="card text-center">
+                                <div class="card-header">
+                                <h3>EDIT OPTIONS</h3>
+                            </div>
+                            <form [formGroup]="EditOptionForm" (ngSubmit)="onSubmitEO()">
+                                <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <td class="title">Site Name</td>
+                                            <td class="data site-name">
+                                                <div class="form-group">
+                                                    <!-- full name in inglish-->
+                                                    <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                    <div class="guide-en-message">Enter Site Name In English</div>
+                                                    <div class="fullname">  
+                                                        <input 
+                                                            type="text" 
+                                                            name="name_en" 
+                                                            formControlName="name_en"
+                                                            [ngClass]="{ 'is-invalid': EOsubmitted && f1.name_en.errors }"
+                                                            class="form-control" 
+                                                            placeholder="Site name In English"> 
+                                                        <div *ngIf="EOsubmitted && f1.name_en.errors" class="invalid-feedback">
+                                                            <div *ngIf="f1.name_en.errors.required">Name is required</div>
+                                                            <div *ngIf="f1.name_en.errors.minlength">Name must be at least 3 characters</div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                     <!--full name in arabic-->
+                                                    <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                    <div class="guide-ar-message">Enter Site Name In Arabic</div>
+                                                    <div class="fullname">     
+                                                        <input 
+                                                            type="text" 
+                                                            name="name_ar" 
+                                                            formControlName="name_ar"
+                                                            [ngClass]="{ 'is-invalid': EOsubmitted && f1.name_ar.errors }"
+                                                            class="form-control" 
+                                                            placeholder="Site name In Arabic">
+                                                        <div *ngIf="EOsubmitted && f1.name_ar.errors" class="invalid-feedback">
+                                                            <div *ngIf="f1.name_ar.errors.required">Name is required</div>
+                                                            <div *ngIf="f1.name_ar.errors.minlength">Name must be at least 3 characters</div>
+                                                        </div>   
+                                                    </div>  
+                                                </div>
+                                               
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">Site Description</td>
+                                            <td class="data site-desc">
+                                                <div class="form-group">
+                                                     <!-- full name in inglish-->
+                                                    <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                    <div class="guide-en-message">Enter Site Description In English</div>
+                                                
+                                                    <textarea  
+                                                        name="desc_en" 
+                                                        formControlName="desc_en"
+                                                        [ngClass]="{ 'is-invalid': EOsubmitted && f1.desc_en.errors }"
+                                                        class="form-control" 
+                                                        placeholder="Site Description In English">
+                                                    </textarea>
+                                                    <div *ngIf="EOsubmitted && f1.desc_en.errors" class="invalid-feedback">
+                                                        <div *ngIf="f1.desc_en.errors.required">Description is required</div>
+                                                        <div *ngIf="f1.desc_en.errors.minlength">Description must be at least 20 characters</div>
+                                                    </div>   
+                                                </div>
+                                               
+                                                <div class="form-group">
+                                                     <!--full name in arabic-->
+                                                    <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                    <div class="guide-ar-message">Enter Site Description In Arabic</div>
+                                            
+                                                    <textarea  
+                                                        name="desc_ar" 
+                                                        formControlName="desc_ar"
+                                                        [ngClass]="{ 'is-invalid': EOsubmitted && f1.desc_ar.errors }"
+                                                        class="form-control" 
+                                                        placeholder="Site Description In Arabic">
+                                                    </textarea> 
+                                                    <div *ngIf="EOsubmitted && f1.desc_ar.errors" class="invalid-feedback">
+                                                        <div *ngIf="f1.desc_ar.errors.required">Description is required</div>
+                                                        <div *ngIf="f1.desc_ar.errors.minlength">Description must be at least 20 characters</div>
+                                                    </div>   
+                                                </div>
+                                               
+                                  
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">Keywords</td>
+                                            <td class="data site-desc">
+                                                <div class="form-group">
+                                                     <!-- full name in inglish-->
+                                                    <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                                    <div class="guide-en-message">Enter Keywords In English</div>
+                                                    <textarea  
+                                                        name="keywords_en" 
+                                                        formControlName="keywords_en"
+                                                        [ngClass]="{ 'is-invalid': EOsubmitted && f1.keywords_en.errors }"
+                                                        class="form-control" 
+                                                        placeholder="Site Keywords In English">
+                                                    </textarea> 
+                                                    <div *ngIf="EOsubmitted && f1.keywords_en.errors" class="invalid-feedback">
+                                                        <div *ngIf="f1.keywords_en.errors.required">Keywords is required</div>
+                                                        <div *ngIf="f1.keywords_en.errors.minlength">Keywords must be at least 20 characters</div>
+                                                    </div>   
+                                                </div>
+                                                <div class="form-group">
+                                                     <!--full name in arabic-->
+                                                    <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                                    <div class="guide-ar-message">Enter Keywords In Arabic</div>
+                                                    <textarea 
+                                                        name="keywords_ar" 
+                                                        formControlName="keywords_ar"
+                                                        [ngClass]="{ 'is-invalid': EOsubmitted && f1.keywords_ar.errors }"
+                                                        class="form-control" 
+                                                        placeholder="Site Keywords In Arabic">
+                                                    </textarea>    
+                                                    <div *ngIf="EOsubmitted && f1.keywords_ar.errors" class="invalid-feedback">
+                                                        <div *ngIf="f1.keywords_ar.errors.required">Keywords is required</div>
+                                                        <div *ngIf="f1.keywords_ar.errors.minlength">Keywords must be at least 20 characters</div>
+                                                    </div>   
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">Site Email</td>
+                                            <td class="data">
+                                                <div class="form-group">
+                                                    <input 
+                                                        type="email" 
+                                                        class="form-control email" 
+                                                        name="email" 
+                                                        formControlName="email"
+                                                        [ngClass]="{ 'is-invalid': EOsubmitted && f1.email.errors }"
+                                                        placeholder="Enter Email">
+                                                    <div *ngIf="EOsubmitted && f1.email.errors" class="invalid-feedback">
+                                                        <div *ngIf="f1.email.errors.required">Email is required</div>
+                                                        <div *ngIf="f1.email.errors.email">Email Not Valid</div>
+                                                    </div>   
+                                                </div>
+                                               
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">1 Ramadan Date</td>
+                                            <td class="data">
+                                                <div class="form-group">
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control email" 
+                                                        name="date" 
+                                                        formControlName="date"
+                                                        [ngClass]="{ 'is-invalid': EOsubmitted && f1.date.errors }"
+                                                        placeholder="Enter 1 Ramadan Date">
+                                                    <div *ngIf="EOsubmitted && f1.date.errors" class="invalid-feedback">
+                                                        <div *ngIf="f1.date.errors.required">Date is required</div>
+                                                    </div>  
+                                                </div>  
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="card-footer text-muted">
+                                    <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    <!--end site options-->
+
+                    <!-- start member settings-->
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>MEMBER SETTINGS</h3>
+                        </div>
+                        <form [formGroup]="EditMemSettForm" (ngSubmit)="onSubmitEM()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Allow new Registration</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">   
+                                                <input  
+                                                    type="radio" 
+                                                    id="AllowReg" 
+                                                    name="NewReg" 
+                                                    value="yes" 
+                                                    (change)="radioAllowNewRegChangeHandeler($event)">
+                                                <label for="AllowReg">Yes</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="NotAllowReg" 
+                                                    name="NewReg" 
+                                                    value="no" 
+                                                    (change)="radioAllowNewRegChangeHandeler($event)">
+                                                <label for="NotAllowReg">no</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Membership activation</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">
+                                                <input  
+                                                    type="radio" 
+                                                    id="auto" 
+                                                    name="MemActivation" 
+                                                    value="automatic" 
+                                                    (change)="radioMemShipChangeHandeler($event)">
+                                                <label for="auto">Automatic</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="EConfirmation" 
+                                                    name="MemActivation" 
+                                                    value="EmailConfirmation" 
+                                                    (change)="radioMemShipChangeHandeler($event)">
+                                                <label for="EConfirmation">Email Confirmationo</label> 
+                                                <input  
+                                                    type="radio" 
+                                                    id="manual" 
+                                                    name="MemActivation" 
+                                                    value="manual" 
+                                                    (change)="radioAllowNewRegChangeHandeler($event)">
+                                                <label for="manual">Manual By Admin</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Disable Calender Editing</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">
+                                                <input  
+                                                    type="radio" 
+                                                    id="AllowEdit" 
+                                                    name="CalenderEdit" 
+                                                    value="yes" 
+                                                    (change)="radioCalenderEditChangeHandeler($event)">
+                                                <label for="AllowEdit">Yes</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="NotAllowEdit" 
+                                                    name="CalenderEdit" 
+                                                    value="no" 
+                                                    (change)="radioCalenderEditChangeHandeler($event)">
+                                                <label for="NotAllowEdit">no</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+                    
+                    </div>
+                    <!--end members settings-->
+
+                    <!--start language settings-->
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>LANGUAGE SETTINGS</h3>
+                        </div>
+                        <form [formGroup]="LangSettForm" (ngSubmit)="onSubmitLS()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Default Language</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">
+                                                <input  
+                                                    type="radio" 
+                                                    id="arabic" 
+                                                    name="DefaultLang" 
+                                                    value="arabic" 
+                                                    (change)="radioDefLangChangeHandeler($event)">
+                                                <label for="arabic">Arabic</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="english" 
+                                                    name="DefaultLang" 
+                                                    value="english" 
+                                                    (change)="radioDefLangChangeHandeler($event)">
+                                                <label for="english">English</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Other Language</td>
+                                        <td class="data">
+                                            <div class="newsletter form-group">
+                                                <input  
+                                                    type="radio" 
+                                                    id="AllowOtherLang" 
+                                                    name="OtherLang" 
+                                                    value="yes" 
+                                                    (change)="radioOtherLangChangeHandeler($event)">
+                                                <label for="AllowOtherLang">Yes</label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="NotAllowOtherLang" 
+                                                    name="OtherLang" 
+                                                    value="no" 
+                                                    (change)="radioOtherLangChangeHandeler($event)">
+                                                <label for="NotAllowOtherLang">No</label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+             
+                    </div>
+                    <!--end language settings-->
+
+                     <!--start language settings-->
+                     <div class="card text-center">
+                        <div class="card-header">
+                          <h3>SITE LOGO SETTINGS</h3>
+                        </div>
+                        <form [formGroup]="LogoSettForm" (ngSubmit)="onSubmitSL()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Site Logo</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <div class="image">
+                                                    <img src="../../../assets/images/homeimage.png" alt="english flag" width="100%" height="100%">
+                                                </div>
+                                                <a class="deleteImage" href="#">Delete</a>
+                                                <input 
+                                                    type="file" 
+                                                    (change)="getLogoFiles($event)" 
+                                                    name="SiteLogo" 
+                                                    id="file" 
+                                                    class="inputfile chooseImage" />
+                                                <label class="uploade-image" for="file"> <i class="fas fa-upload"></i>Choose a file</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Site Color</td>
+                                        <td class="data site-colors">
+                                            <div class="newsletter form-group">    
+                                                <input  
+                                                    type="radio" 
+                                                    id="red" 
+                                                    name="red" 
+                                                    value="red" 
+                                                    (change)="radioSiteColChangeHandeler($event)">
+                                                <label for="red"></label>
+                                                <input  
+                                                    type="radio" 
+                                                    id="yellow" 
+                                                    name="yellow" 
+                                                    value="yellow" 
+                                                    (change)="radioSiteColChangeHandeler($event)">
+                                                <label for="yellow"></label> 
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--end language settings-->
+
+                     <!--start contact info settings-->
+                     <div class="card text-center">
+                        <div class="card-header">
+                          <h3>CONTACT INFO SETTINGS</h3>
+                        </div>
+                        <form [formGroup]="ContactInfoSettForm" (ngSubmit)="onSubmitCI()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Phone Number</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control phoneNom" 
+                                                    name="phone" 
+                                                    formControlName="phone"
+                                                    [ngClass]="{ 'is-invalid': CIsubmitted && f5.phone.errors }"
+                                                    placeholder="Enter Phone Number">
+                                                <div *ngIf="CIsubmitted && f5.phone.errors" class="invalid-feedback">
+                                                    <div *ngIf="f5.phone.errors.required">Phone is required</div>
+                                                </div>
+                                            </div>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Email</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                type="email" 
+                                                class="form-control email" 
+                                                name="email" 
+                                                formControlName="email"
+                                                [ngClass]="{ 'is-invalid': CIsubmitted && f5.email.errors }"
+                                                placeholder="Enter Email">
+                                            <div *ngIf="CIsubmitted && f5.email.errors" class="invalid-feedback">
+                                                <div *ngIf="f5.email.errors.required">Email is required</div>
+                                                <div *ngIf="f5.email.errors.email">Email Not Valid</div>
+                                            </div>
+                                            </div>  
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <!--end contact info settings-->
+ 
+                     <!--start socail media settings-->
+                     <div class="card text-center">
+                        <div class="card-header">
+                          <h3>SOCIAL NETWORKS SETTINGS</h3>
+                        </div>
+                        <form [formGroup]="SocailNetSettForm" (ngSubmit)="onSubmitSN()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Facebook</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control " 
+                                                    name="facebook" 
+                                                    formControlName="facebook"
+                                                    [ngClass]="{ 'is-invalid': SNsubmitted && f6.facebook.errors }"
+                                                    placeholder="Enter Link">
+                                                <div *ngIf="SNsubmitted && f6.facebook.errors" class="invalid-feedback">
+                                                    <div *ngIf="f6.facebook.errors.required">Facebook Link is required</div>
+                                                </div>
+                                            </div>   
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Twitter</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control " 
+                                                    name="twitter" 
+                                                    formControlName="twitter"
+                                                    [ngClass]="{ 'is-invalid': SNsubmitted && f6.twitter.errors }"
+                                                    placeholder="Enter Link">
+                                                <div *ngIf="SNsubmitted && f6.twitter.errors" class="invalid-feedback">
+                                                    <div *ngIf="f6.twitter.errors.required">Twitter Link is required</div>
+                                                </div>
+                                            </div>  
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Youtube</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control " 
+                                                    name="youtube" 
+                                                    formControlName="youtube"
+                                                    [ngClass]="{ 'is-invalid': SNsubmitted && f6.youtube.errors }"
+                                                    placeholder="Enter Link">
+                                                <div *ngIf="SNsubmitted && f6.youtube.errors" class="invalid-feedback">
+                                                    <div *ngIf="f6.youtube.errors.required">Youtube Link is required</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Linked In</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control " 
+                                                    name="linked_in" 
+                                                    formControlName="linked_in"
+                                                    [ngClass]="{ 'is-invalid': SNsubmitted && f6.linked_in.errors }"
+                                                    placeholder="Enter Link">
+                                                <div *ngIf="SNsubmitted && f6.linked_in.errors" class="invalid-feedback">
+                                                    <div *ngIf="f6.linked_in.errors.required">Linked In Link is required</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Instagram</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control " 
+                                                    name="instagram" 
+                                                    formControlName="instagram"
+                                                    [ngClass]="{ 'is-invalid': SNsubmitted && f6.instagram.errors }"
+                                                    placeholder="Enter Link">
+                                                <div *ngIf="SNsubmitted && f6.instagram.errors" class="invalid-feedback">
+                                                    <div *ngIf="f6.instagram.errors.required">Instagram In Link is required</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Snapchat</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control " 
+                                                    name="snapchat" 
+                                                    formControlName="snapchat"
+                                                    [ngClass]="{ 'is-invalid': SNsubmitted && f6.snapchat.errors }"
+                                                    placeholder="Enter Link">
+                                                <div *ngIf="SNsubmitted && f6.snapchat.errors" class="invalid-feedback">
+                                                    <div *ngIf="f6.snapchat.errors.required">Snapchat In Link is required</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr> 
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!--end socail media settings-->   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

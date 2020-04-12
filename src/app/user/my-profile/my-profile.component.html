@@ -1,0 +1,132 @@
+<app-upperbar></app-upperbar>
+<app-u-navbar></app-u-navbar>
+
+<!--start my information-->
+<div class="information">
+    <div class="container">	
+        <div class="card">
+            <div class="card-header">
+                <h3>MY INFORMATIONS</h3>
+            </div>
+            <div class="card-body">    
+                <ul class="list-unstyled">
+                    <li>
+                        <i class="fas fa-user"></i>
+                        <h6>Name  </h6> : <span class="name"> Ahmed Hashem Saleh</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <h6>Email </h6> :<span class="email"> ahmedhashem.ah988@gmail.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile"></i>
+                        <h6>Phone No </h6> :<span class="phone"> 0501404662</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-stopwatch"></i>
+                        <h6>Voluntary hours </h6> : <span class="hours"> 200 H</span>
+                    </li>
+                </ul>
+                <a href="#" routerLink='/EditMyProfile' class="btn btn-default edit-profile">
+                    <i class="far fa-edit"></i>
+                    Edit My Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end my information-->
+
+<!--start my certificate-->
+<div class="certificate">
+    <div class="container">	
+        <div class="card">
+            <div class="card-header">
+                <h3>MY CERTIFICATE</h3>
+            </div>
+            <div class="card-body">    
+                
+                <button class="certificate-link" (click)="showRate()">
+                    <h5 class="the-name">Ahmed Hashem Saleh</h5>
+                    <div class="certificate-content">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Voluntary Certificate - Ramadan Aman 8</span>
+                    </div>
+                </button>
+                <div class="rate-us">
+                    
+                    <button type="submit" class="btn rate-butt" (click)="showww()" >Rate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end my information-->
+
+<!--start my volunteers-->
+<div class="volunteers">
+    <div class="container">	
+        <div class="card">
+            <div class="card-header">
+                <h3>MY VOLUNTEERS</h3>
+            </div>
+            <div class="card-body"> 
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Ahmed Hashem Saleh
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-user"></i>
+                                <h6>Name  </h6> : <span class="name"> Ahmed Hashem Saleh</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i>
+                                <h6>Gender </h6> :<span class="email">Male</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mobile"></i>
+                                <h6>Phone No </h6> :<span class="phone"> 0501404662</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-stopwatch"></i>
+                                <h6>Voluntary hours </h6> : <span class="hours"> 200 H</span>
+                            </li>
+                        </ul>
+                        <a href="#" routerLink='/EditUser'  class="btn btn-default edit-vol">
+                            <i class="far fa-edit"></i>
+                            Edit User
+                        </a>
+                        <a href="#" class="btn btn-default delete-vol">
+                            <i class="far fa-trash-alt"></i>
+                            Delete User
+                        </a>
+                        <a href="#" routerLink='/AddUser' class="btn btn-default add-vol">
+                            <i class="fas fa-user-plus"></i>
+                            Add User
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end my volunteers-->
+
+
+<!--start footer-->
+<app-footer></app-footer>
+<!--end footer-->
+
+<!--strat copyright-->
+<app-u-copyright></app-u-copyright>
+<!--end copyright-->

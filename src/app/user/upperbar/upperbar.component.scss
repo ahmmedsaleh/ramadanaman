@@ -1,0 +1,502 @@
+@import "../../../styles.scss";
+//variables
+$upperbarBGcolor : #747d8c;
+$upperbarDivcolor : #a4b0be;
+$upperbarFontColor : #2f3542;
+//variables
+$mainUserColor : #857d33;
+$upperbarFontColor : #2f3542;
+
+.upperbar{
+    background-color: $upperbarBGcolor;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    .log-reg{
+        padding: 7px 0;
+        display: inline-block;
+        
+        .signup-link{
+            display: inline-block;
+            background-color: $upperbarDivcolor;
+            padding: 5px 11px;
+            border-radius: 7px;
+            cursor: pointer;
+            a{
+                color: $upperbarFontColor;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                i{
+                    color: $upperbarFontColor;
+                    margin-right: 3px;
+                }
+            }
+        }
+        .login-link{
+            display: inline-block;
+            margin-left: 10px;
+            background-color: $upperbarDivcolor;
+            padding: 5px 11px;
+            border-radius: 7px;
+            cursor: pointer;
+            a{
+                color: $upperbarFontColor;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+                i{
+                    color: $upperbarFontColor;
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+    .logedin{
+        padding: 8px 0;
+        display: inline-block;
+        button{
+            background-color: $upperbarDivcolor;
+            padding: 5px 11px;
+            border-radius: 7px;
+            cursor: pointer;
+            color: $upperbarFontColor;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .dropdown-menu{
+            margin-top: 6px;
+            padding: 0;
+            background-color: $upperbarDivcolor;
+            color: $upperbarFontColor;
+            a{
+                padding: 8px 10px;
+                font-size: 13px;
+                font-weight: 500;
+                &:hover,&:focus{
+                    background-color: $mainUserColor;
+                    color: #FFF;
+                }
+                i{
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+    .lang{
+        float: right;
+        padding: 7px 0;
+        .contain{
+            background-color: $upperbarDivcolor;
+            padding: 3px 11px 6px 11px;
+            border-radius: 7px;
+            .english{
+                display: none;
+            }
+            .arabic{
+
+            }
+            a{
+                text-decoration: none;
+                img{
+                    width: 30px;
+                    height: 20px;
+                }
+                span{
+                    color: $upperbarFontColor;    
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-left: 3px;
+                }
+            }
+        }
+        
+        
+    }
+}
+
+//start login form
+.login-form{
+    position: absolute;
+    top: 200px;
+    left: 21%;
+    background-color: #FFF;
+    padding: 35px 50px;
+    width: 800px;
+    border: 1px solid #DDD;
+    z-index: 9999;
+    display: none;
+    .close{
+        font-size: 19px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .title{
+        margin-bottom: 20px;
+        i{
+            font-size: 24px;
+            margin-right: 5px;
+            color: $mainUserColor;
+        }
+        h3{
+            font-size: 20px;
+            display: inline-block;
+            font-weight: 700;
+            color: $upperbarFontColor;
+            
+        }
+    }
+    form{
+        padding: 0 30px;
+        label{
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 5px;
+            i{
+                color: $mainUserColor;
+            }
+        }
+        .username, .password{
+            background-color: unset;
+            border: none;
+            border-bottom: 1px solid #DDD;
+            padding: 6px 10px;
+            width: 39%;
+        }
+        .username{
+            margin-right: 80px;
+        }
+        .remember{
+            margin-top: 10px;
+            position: relative;
+            .remme{
+                position: relative;
+                top: 2px;
+            }
+            label{
+                font-size: 12px;
+                color: #6d717b;
+            }
+
+        }
+        a{
+            float: right;
+            font-size: 12px;
+            color: #6d717b;
+        }
+        button{
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #857d33;
+            width: 100%;
+            margin-top: 10px;
+            padding: 7px;
+            color: #857d33;
+            border-radius: 0;
+            &:hover{
+                background-color: $mainUserColor;
+                color: #FFF;
+            }
+        }
+    }
+    
+}
+
+
+//start signup form
+//start login form
+.signup-form{
+    position: absolute;
+    top: 50px;
+    left: 21%;
+    background-color: #FFF;
+    padding: 35px 50px;
+    width: 800px;
+    z-index: 9999;
+    border: 1px solid #DDD;
+    display: none;
+
+    //main class
+    input, select,textarea{
+        font-size: 13px;
+    }
+    .close{
+        font-size: 19px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+    .title{
+        margin-bottom: 20px;
+        i{
+            font-size: 24px;
+            margin-right: 5px;
+            color: $mainUserColor;
+        }
+        h3{
+            font-size: 20px;
+            display: inline-block;
+            font-weight: 700;
+            color: $upperbarFontColor;       
+        }
+    }
+    form{
+        padding: 0 30px;
+        position: relative;
+        .name-form{
+            margin-bottom: 10px;
+            .name-lable{
+                font-size: 14px;
+                font-weight: 500;
+                margin-right: 26px;
+                position: relative;
+                top: 20px;
+                img{
+                    width: 35px;
+                    height: 21px;
+                }
+                .for-defintion-en{
+                    &:hover + .guide-en-message{
+                        display: inline-block;
+                    }
+    
+                }
+                .guide-en-message ,.guide-ar-message{
+                    position: absolute;
+                    top: 23px;
+                    left: 37px;
+                    width: max-content;
+                    padding: 4px 10px;
+                    font-size: 12px;
+                    background-color: #FFF;
+                    border: 1px solid #DDD;
+                    border-left: 5px solid #080;
+                    display: none;
+                }
+                .for-defintion-ar{
+                    
+                    &:hover + .guide-ar-message{
+                        display: inline-block;
+                    }
+    
+                }
+            }
+        }
+        .name-en-form{
+            margin-bottom: 10px;
+        }
+        .name-ar-form{
+            margin-bottom: 34px;
+        }
+        .select-agency-group{
+            display: none;
+            .acadimic-id{
+                display: none;
+                width: 220px;
+                margin-left: 46px;
+                .acc-id{
+                    background-color: unset;
+                    border: none;
+                    border-bottom: 1px solid #DDD;
+                    padding: 6px 5px;
+                    width: 34%;
+                }
+            }
+        }
+        
+      
+        .Registeration-lable{
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 20px;
+            position: relative;
+        }
+        label{
+            font-size: 14px;
+            font-weight: 500;
+            margin-right: 5px;
+            i{
+                color: $mainUserColor;
+            }
+        }
+        select{
+            width: 50%;
+            border: none;
+            border-bottom: 1px solid #DDD;
+            padding: 6px 10px;
+            background-color: unset;
+            font-size: $placeholderFontSize;
+            color: #757575;
+        }
+        .select-agency{
+            width: 40%;
+        }
+        .name{
+            background-color: unset;
+            border: none;
+            border-bottom: 1px solid #DDD;
+            padding: 6px 5px;
+            width: 19%;
+            margin-right: 20px;
+        }
+        .birth-date{
+            background-color: unset;
+            border: none;
+            border-bottom: 1px solid #DDD;
+            padding: 6px 5px;
+            width: 30%;
+            margin-right: 20px;
+        }
+        .male, .female{
+            font-size: 14px;
+            font-weight: 400;
+            color: #757575;
+            margin-right: 15px;
+        }
+        .news-letter{
+            position: relative;
+            .news{
+                position: relative;
+                top: 2px;
+            }
+            .news-lable{
+                color: #757575;
+                font-size: 14px;
+                font-weight: 400;
+                margin-left: 4px;
+            }
+        }
+        .login-info{
+            h4{
+                font-size: 15px;
+                margin-bottom: 0;
+                margin-top: 50px;
+            }
+            hr{
+                width: 23px;
+                background-color: #2f3542;
+                min-height: 2px;
+                margin-bottom: 25px;
+                margin-top: 10px;
+                text-align: left;
+                display: inline-block;
+            } 
+            .username, .number, .email{
+                background-color: unset;
+                border: none;
+                border-bottom: 1px solid #DDD;
+                padding: 6px 5px;
+                width: 25%;
+                margin-right: 20px;
+            }
+            .username{
+                margin-right: 60px;
+            }
+            .email{
+                width: 350px;
+            }
+            .form-group{
+                position: relative;
+                .terms{
+                    position: relative;
+                    top: 2px;
+                }
+                .terms-lable{
+                    color: #757575;
+                    font-weight: 400;
+                    margin-left: 4px;
+                    a{
+                        color: #757575;
+                        font-weight: 500;
+                        cursor: pointer;
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                        
+                    }
+                }
+                .terms-cond{
+                    position: absolute;
+                    top: 38px;
+                    width: 900px;
+                    left: 0px;
+                    display: none;
+                    &:before{
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        border-width: 11px;
+                        border-style: solid;
+                        border-color: transparent transparent $mainUserColor transparent;
+                        position: absolute;
+                        left: 135px;
+                        top: -22px;
+                    }
+
+                    .card{
+                       
+                        .card-header{
+                            padding: 8px 10px;
+                            h4{
+                                font-size: 15px;
+                                margin-top: 0;
+                                display: inline-block;
+                                color: $upperbarFontColor;
+                            }
+                            .hide{
+                                float: right;
+                                font-size: 15px;
+                                font-weight: 500;
+                                width: 12px;
+                                cursor: pointer;
+                            }
+                        }
+                        .card-body{
+                            padding: 10px 15px;
+                            li{
+                                font-size: 13px;
+                                list-style: decimal;
+                                line-height: 25px;
+                                color: #757575;
+
+                            }
+                        }
+                    }
+                }
+            }
+           
+            
+        }
+        
+        
+        button{
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #857d33;
+            width: 100%;
+            margin-top: 10px;
+            padding: 7px;
+            color: #857d33;
+            border-radius: 0;
+            &:hover{
+                background-color: $mainUserColor;
+                color: #FFF;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+

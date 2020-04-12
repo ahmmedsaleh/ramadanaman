@@ -1,0 +1,37 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+.container{
+    .table{
+        overflow: hidden;
+        tr{
+            .check{
+                width: 5%;
+            }
+            .username{
+                width: 15%;
+            }
+            .last{
+                width: 15%;
+            }
+            .fullname{
+                width: 20%;
+            }
+            .type{
+                width: 14px;
+            }
+            .status{
+                width: 12%;
+            }
+            .option{
+                width: 19%;
+            }
+            .type-button{
+                @extend .status-button;
+                background-color: #004D40;
+            }
+
+
+            
+        }
+    }
+}

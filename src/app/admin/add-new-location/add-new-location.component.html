@@ -1,0 +1,234 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>ADD NEW LOCATION</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <form [formGroup]="AddLocationForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td class="title">Place Name</td>
+                                        <td class="data">
+                                            <div class="form-group"> 
+                                                <div class="english">
+                                                    <label class="refer">
+                                                        <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control" 
+                                                        name="name_en" 
+                                                        formControlName="name_en"
+                                                        [ngClass]="{ 'is-invalid': submitted && f.name_en.errors }"
+                                                        placeholder="Enter The Name In English">
+                                                    <div *ngIf="submitted && f.name_en.errors"  class="invalid-feedback">
+                                                        <div *ngIf="f.name_en.errors.required">Name is required</div>
+                                                        <div *ngIf="f.name_en.errors.minlength">Name must be at least 3 characters</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="arabic">
+                                                    <label class="refer">
+                                                        <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control" 
+                                                        name="name_ar" 
+                                                        formControlName="name_ar"
+                                                        [ngClass]="{ 'is-invalid': submitted && f.name_ar.errors }"
+                                                        placeholder="Enter The Name In Arabic">
+                                                    <div *ngIf="submitted && f.name_ar.errors"  class="invalid-feedback">
+                                                        <div *ngIf="f.name_ar.errors.required">Name is required</div>
+                                                        <div *ngIf="f.name_ar.errors.minlength">Name must be at least 3 characters</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="Orgadmin">
+                                        <td class="title">Country</td>
+                                        <td class="data"> 
+                                            <div class="form-group">
+                                                <select class="form-control" name = "country_id" formControlName="country_id" (change)="selectChangeHandler($event)">
+                                                    <option disabled [ngValue]="null" selected>-- Country --</option>
+                                                    <option  *ngFor = " let country of Countries;let i=index" [value]="country.id">{{country.name_en}}</option>
+                                                </select>
+                                            </div>
+                                            
+                                        </td> 
+                                    </tr>
+                                    <tr *ngIf="CounAdmin">
+                                        <td class="title">City</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <select class="form-control" name = "city_id" formControlName="city_id">
+                                                    <option disabled [ngValue]="null" selected>-- City --</option>
+                                                    <option  *ngFor = " let city of Cities;let i=index" [value]="city.id">{{city.name_en}}</option>
+                                                </select>
+                                            </div> 
+                                          
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td class="title">Person Required</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <input 
+                                                    type="text" 
+                                                    class="form-control requiredPerson" 
+                                                    name="person_required" 
+                                                    formControlName="person_required"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.person_required.errors }"
+                                                    placeholder="No. Requred">
+                                                <div *ngIf="submitted && f.person_required.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.person_required.errors.required">Required Person is required</div>
+                                                </div>
+
+                                            </div>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Place Type</td>
+                                        <td class="data">
+                                            <div class="form-group select-place-type-group">
+                                                <select class="form-control place-type" name = "place_type" formControlName="place_type"
+                                                [ngClass]="{ 'is-invalid': submitted && f.place_type.errors }"> 
+
+                                                    <option selected disabled [ngValue]="null">-- Place Type --</option>
+                                                    <option value="dist">distribution</option>
+                                                    <option value="fill">filling</option>
+                                                   
+                                                </select>
+                                                <div *ngIf="submitted && f.place_type.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.place_type.errors.required">Place Type is required</div>
+                                                </div>  
+                                                <div class="Volhours">
+                                                    <label>
+                                                        Voluntary hours :
+                                                    </label>
+                                                    <input 
+                                                        type="number" 
+                                                        class="hours-no form-control" 
+                                                        name="hours" 
+                                                        formControlName="hours"
+                                                        [ngClass]="{ 'is-invalid': submitted && f.hours.errors }"
+                                                        min="1" 
+                                                        max="10" 
+                                                        value="1">
+                                                    <div *ngIf="submitted && f.hours.errors" class="invalid-feedback">
+                                                        <div *ngIf="f.hours.errors.required">Hours is required</div>
+                                                    </div>    
+                                                </div>    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Google Map Code</td>
+                                        <td class="data">
+                                            <div class="form-group">
+                                                <textarea 
+                                                    class="form-control"
+                                                    name="map_code" 
+                                                    formControlName="map_code"
+                                                    [ngClass]="{ 'is-invalid': submitted && f.map_code.errors }">
+                                                </textarea>
+                                                <div *ngIf="submitted && f.map_code.errors" class="invalid-feedback">
+                                                    <div *ngIf="f.map_code.errors.required">Map Code is required</div>
+                                                </div>    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="title">Google Map</td>
+                                        <td class="data">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28833.940657324194!2d55.465309005262945!3d25.39668931067827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f58317b5c7537%3A0x1fb58b6d1563a4c5!2z2YbYs9iq2Ygg2YfYp9mK2KjYsdmF2KfYsdmD2Ko!5e0!3m2!1sar!2sae!4v1582958476658!5m2!1sar!2sae" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <!-- need edit-->
+
+                                        <td class="title">Days</td>
+                                        <td class="data">
+                                            <div class="form-group days">
+                                                <label title="" *ngFor="let day of Days; let i=index" [for]="day" class="select-day">
+                                                    <input 
+                                                        type="checkbox" 
+                                                        [name]="day" 
+                                                        class="theday" 
+                                                        [value]="day" 
+                                                        (change)="onCheckboxChange($event)" 
+                                                        [id]="day" >
+                                                    {{day}}
+                                                </label> 
+                                               
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr> 
+                                        <td class="title">Alert Message</td>
+                                        <td class="data">
+                                            <div class="form-group" >
+                                                <div class="english">
+                                                    <label class="refer">
+                                                        <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control" 
+                                                        name="mssg_en" 
+                                                        formControlName="mssg_en"
+                                                        placeholder="Enter The Message In English">
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="arabic">
+                                                    <label class="refer">
+                                                        <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        class="form-control" 
+                                                        name="mssg_ar" 
+                                                        formControlName="mssg_ar"
+                                                        placeholder="Enter The Message In Arabic">
+                                                </div>
+                                            </div>  
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="submit" class='btn btn-primary add-button' ><i class="fas fa-plus"></i>Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,13 @@
+@import "../../../../styles.scss";
+@import "../../volunteers-report/volSearch/volsearch.component.scss";
+
+
+.search{
+    form{
+        span{
+            select{
+                max-width: 120px;
+            }
+        }
+    }
+}

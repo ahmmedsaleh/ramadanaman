@@ -1,0 +1,121 @@
+@import "../../../styles.scss";
+
+
+
+
+.header {
+    background-color: $navbarBg;
+    clear: both;
+    display: inline-block;
+    padding: 0 20px;
+    width: 100%;
+    .navbar-toggler{
+        color: $navbarColor;
+        padding: 20px 0;
+    }
+    .control{
+        float: right;
+        padding: 0 20px;   
+        .admin-log{
+            display: inline-block;
+            margin-right: 15px;
+            &:focus{
+                background-color: #dc2a2a;
+                height: 100%
+            }
+            &:hover{
+                background-color: #dc2a2a;
+                height: 100%
+            }
+            .nav-link{
+                color: $navbarColor;
+                padding: 20px 10px;
+                text-decoration: none;
+                font-size: 16px;
+                font-weight: 400;
+                &:focus{
+                    font-weight: 400;
+                }
+                &:hover{
+                    font-weight: 400;
+                }
+            }
+            .dropdown-menu{
+                left: -105px;
+                min-width: 12rem;
+                padding: 0;
+                margin: 0;
+                color: #FFF;
+                background-color: #dc2a2a;
+                border: none;
+                border-radius: 0;
+                .dropdown-item{
+                    padding: 10px 20px;
+                    color: $navbarColor;
+                    font-size: 15px;
+                    &:hover{
+                        color: $navItemsBg;
+                    }
+                }
+            }
+           
+        }
+        .site-view{
+            display: inline-block;
+            margin-right: 15px;
+            background-color: $navItemsBg;
+            border: 1px solid $navItemsBorderBg;
+            border-radius: 10px;
+            .notification{
+                padding: 5px 10px;
+                a{
+                    color: $navbarColor;
+                    span{
+
+                    }
+                }
+            }
+        }
+        .lang{
+            display: inline-block;
+            margin-right: 15px;
+            background-color: $navItemsBg;
+            border: 1px solid $navItemsBorderBg;
+            border-radius: 10px;
+            .en{
+                padding: 5px 10px 6px 10px;
+                a{
+                    color: $navbarColor;
+                    font-size: $navItemsFontSize + 1;
+                    font-weight: $navItemsFontWeight;
+                    text-decoration: none;
+                    img{
+                        margin-right: 3px;
+                        height: 18px;
+                    }
+                    span{
+
+                    }
+                }
+            }
+            .ar{
+                display: none;
+                padding: 5px 10px 6px 10px;
+                a{
+                    color: $navbarColor;
+                    font-size: $navItemsFontSize + 1;
+                    font-weight: $navItemsFontWeight;
+                    text-decoration: none;
+                    img{
+                        margin-right: 3px;
+                        height: 18px;
+                    }
+                    span{
+                        
+                    }
+                }
+            }
+        }
+    }
+    
+}

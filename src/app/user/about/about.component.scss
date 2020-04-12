@@ -1,0 +1,107 @@
+.head{
+    padding: 220px 0 50px 0;
+    width: 100%;
+    margin-top: 0px;
+    background-color: #FFF;
+    z-index: 9999;
+    overflow: hidden;
+    h1{
+        font-size: 30px;
+        
+    }
+    hr{
+        width: 26px;
+        background-color: #000;
+        min-height: 3px;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+    p{
+        width: 54%;
+        font-size: 14px;
+        margin: 0 auto;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-weight: 400;
+        color: #57606f;
+    }
+}
+.BC{
+    position: fixed;
+    top: 155px;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+    .container{
+        
+        .photo{
+            padding: 0 10%;
+           
+            img{
+                height: 500px;
+                width: 100%;
+               
+            }
+        } 
+    }
+}
+
+.opinion{
+    margin-top: 500px;
+    background-color: #EEE;
+    overflow: hidden;
+    padding: 70px 30px;
+    .A, .B, .C, .D{
+        .card{
+            .card-header{
+                background-color: #867e36;
+                h3{
+                    font-size: 16px;
+                    color: #FFF;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+            }
+            .card-body{
+                padding: 20px 15px;
+                ul{
+                    text-align: left;
+                    
+                    li{
+                        font-size: 13px;
+                        font-weight: 400;
+                        display: flex;
+                        position: relative;
+                        padding: 6px 0;
+                        i{
+                            color: #867e36;
+                            font-size: 13px;
+                            margin-right: 3px;  
+                            position: relative;
+                            top: 5px;
+                        }
+                        span{
+                           
+                        }
+                        p{
+                            line-height: 1.9;
+                            margin-bottom: 0px;
+                        }
+                        
+                    }
+                    
+                    
+                    
+                }
+            }
+            .max{
+                height: 410px;
+            }
+            .min{
+                height: 310px;
+            }
+        }
+    }
+   
+   
+}

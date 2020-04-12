@@ -1,0 +1,42 @@
+
+@import "../edit-country-city/edit-country-city.component.scss";
+
+
+.container{
+    .card{
+        .card-body{
+            .table{
+                tr{
+                    .data{
+                        input, select{
+                            width: 64%;
+                            &::placeholder{
+                                font-size: 14px;
+                            }
+                        }
+                        .password{
+                            display: inline-block;
+                            
+                            & + i{
+                                font-size: 18px;
+                                margin-left: 10px;
+                                cursor: pointer;
+                            }
+                        }
+                        .status{
+                            input{
+                                width: auto;
+                            }
+                            label{
+                                margin-right: 24px;
+                                margin-left: 2px;
+                                font-weight: 500;
+                               
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

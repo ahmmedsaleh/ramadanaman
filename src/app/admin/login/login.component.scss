@@ -1,0 +1,132 @@
+@import "../../../styles.scss";
+
+
+
+
+$mainColor : #857d33;
+
+
+// main classes
+input:focus,button{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+}
+//strat login classes
+.login-admin{
+    background-image: url('../../../assets/images/admin-login-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 657px;
+    font-family: "Numans", sans-serif;
+    align-content: center;
+    position: relative;
+    .container{
+        height: 100%;
+        .Login-error{
+            padding: 10px;
+            background-color: #8c8343;
+            border-left: 5px solid #dc2a2a;
+            position: relative;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 4px;
+            top: 96px;
+            width: 395px;
+            color: #FFF;
+            left: 355px;
+            font-size: 14px;
+            font-weight: 500;
+            display: none;
+        }
+        .card{
+            height: 435px;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 400px;
+            background-color: #2b2b2b;
+            opacity: 0.8;
+            border-radius: 30px;
+            .card-header{
+                color: white;
+                margin-top: 22px;
+                i{
+                    display: inline-block;
+                    color: $mainColor;
+                    margin-right: 10px;
+                    font-size: 30px;
+                }
+                h3{
+                    display: inline-block;
+                    font-size: 25px;
+                }
+            }
+            .card-body{
+                form{
+                    .form-group{
+                        label{
+                            margin-right: 15px;
+                            span{
+                                width: 50px;
+                                background-color: $mainColor;
+                                color: #FFF;
+                                border:0 !important;
+                                padding: 11px 18px;
+                            }
+                        }
+                        input{
+                            display: inline-block;
+                            width: 75%;
+                            background-color: unset;
+                            border: none;
+                            border-radius: 0;
+                            color: #FFF;
+                            font-size: 14px;
+                            border-bottom: 1px solid #DDD;
+                        }
+                    }
+                    .remember{
+                        color: #FFF;
+                        font-size: 13px;
+                        margin-left: 5px;
+                        margin-top: 30px;
+                        input{
+                            width: 18px;
+                            height: 18px;
+                            opacity: 0.8;
+                            margin-left: 15px;
+                            margin-right: 5px;
+                        }
+                    }
+                    .form-group{
+                        text-align: center;
+                        .login_btn{
+                            color: #FFF;
+                            background-color: #857d33;
+                            width: 160px;
+                            outline: none;
+                            border: none;
+                            font-weight: 600;
+                            padding: 7px 10px;
+                            border-radius: 5px;
+                            margin-top: 30px;
+                            opacity: 1;
+                            &:hover{
+                                color: #c1c1c1;
+                                background-color: #5d571f;
+                            }
+                        }
+                    }
+                }
+            }
+            .card-footer{ 
+                margin-top: 0px;
+                height: 60px;
+                a{
+                    color: white;
+                    float: right;
+                    font-size: 13px;
+                }
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import "../volunteers-report/volunteers-report.component.scss";
+
+.container{
+    .table{
+        overflow: hidden;
+        tr{
+            .checkbox{
+                width: 5%;
+            }
+            .name{
+                width: 35%;
+                text-align: left;
+            }
+            .country{
+                width: 25%;
+            }
+            .status{
+                width: 15%;
+            }
+            .options{
+                width: 20%;
+            }
+            .h4-intable{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+<div class="search">
+    <form #sea = "ngForm">
+        <div>
+            <span>
+                <input 
+                style="width: 82px;margin-bottom: 5px;" 
+                type="text" 
+                [(ngModel)] = "VolRepSearchResult.Phone" 
+                name="Phone"  
+                placeholder="Phone" 
+                class="input-small search-input">
+            </span>
+             <span> 
+                <input 
+                style="width: 82px;margin-bottom: 5px;" 
+                type="text" 
+                [(ngModel)] = "VolRepSearchResult.Name"  
+                name="Name" 
+                placeholder="Name" 
+                class="input-small search-input">
+            </span>
+            <span>
+                <select name="Gov" class="search-select" [(ngModel)] = "VolRepSearchResult.Gov" required >
+                    <option disabled [ngValue]="null"> - - agency - -</option>
+                    <option *ngFor = " let age of Agancies" [ngValue]="age.id">{{age.name}}</option>
+                </select>
+            </span>
+            <span>
+                <select name="Day" class="search-select" [(ngModel)] = "VolRepSearchResult.Day" required>
+                    <option disabled [ngValue]="null"> -- Day --</option>
+                    <option *ngFor = " let day of Dayes" [ngValue]="day">{{day}} &nbsp;Ramadan</option>
+                    
+                </select>
+            </span>
+            <span>
+                <select name="Country" class="search-select select-country" (change)="selectChangeHandler($event)">
+                    <option disabled [ngValue]="null" selected> -- Country --</option>
+                    <option *ngFor = " let country of Countries;let i=index " [value]="country.id">{{country.name_en}}</option>
+                </select>
+            </span>
+            <span>
+                <select name="City" class="search-select" (change)="selectChangeHandlerCity($event)">
+                    <option disabled [ngValue]="null" selected> -- City --</option>
+                    <option *ngFor = " let city of Cities;let i=index" [value]="city.id">{{city.name_en}}</option>
+                </select>
+            </span>
+            <span id="refplaces">
+                <select name="palce" class="search-select">
+                    <option disabled [ngValue]="null" selected> -- Place --</option>
+                    <option *ngFor = " let place of Places" [value]="place.id"> {{place.name_en}}</option>
+                </select>
+            </span>
+            <button  type="submit" class="btn search-button" > Serach</button>
+        </div>
+    </form>
+</div>

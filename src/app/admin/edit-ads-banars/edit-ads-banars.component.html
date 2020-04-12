@@ -1,0 +1,98 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <div class="card text-center">
+                        <div class="card-header">
+                          <h3>ADD NEW BANER</h3>
+                          <div class="close" (click)="goback()">
+                              <span>x</span>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td class="title">Country</td>
+                                    <td class="data">
+                                        
+                                        <select class="form-control">
+                                            <option>Select Country</option>
+                                            <option>United Arab Emirates</option>
+                                            <option>Egypt</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Baner Title</td>
+                                    <td class="data">
+                                        <div class="english">
+                                            <label class="refer">
+                                                <img src="../../../assets/images/englishflag.png" alt="english flag" width="100%" height="100%">
+                                            </label>
+                                            <input type="text" class="form-control" name="EnCountryName" placeholder="Enter The Name In English">
+                                        </div>
+                                        <div class="arabic">
+                                            <label class="refer">
+                                                <img src="../../../assets/images/Arabic-Language-Flag.svg" alt="english flag" width="100%" height="100%">
+                                            </label>
+                                            <input type="text" class="form-control" name="ArCountryName" placeholder="Enter The Name In Arabic">
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Hyperlink</td>
+                                    <td class="data">
+                                        <input type="text" class="form-control link" name="link" placeholder="Enter The link">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Image</td>
+                                    <td class="data">
+                                        <input type="file" name="file" id="file" class="inputfile chooseImage" />
+                                        <label class="choose" for="file"> <i class="fas fa-upload"></i>Choose a file</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="title">Description</td>
+                                    <td class="data">
+                                        <!-- Description in inglish-->
+                                        <img class="for-defintion-en" src="../../../assets/images/englishflag.png" width="45px" height="30px">
+                                        <div class="guide-en-message">Enter Description In English</div>
+                                        <form class="description">
+                                            <textarea  name="description-en" class="form-control" placeholder="Enter Description In English"></textarea>
+                                            
+                                        </form>  
+                                        <!--Description in arabic-->
+                                        <img class="for-defintion-ar" src="../../../assets/images/Arabic-Language-Flag.svg" width="45px" height="30px">
+                                        <div class="guide-ar-message">Enter Description In Arabic</div>
+                                        <form class="description">
+                                            <textarea  name="description-ar" class="form-control" placeholder="Enter Description In Arabic"></textarea>
+                                            
+                                        </form>  
+                                    </td>
+                                </tr>
+                            </table>
+                          
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a href="#" class='btn btn-primary save-button'><i class="far fa-save"></i>Save</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

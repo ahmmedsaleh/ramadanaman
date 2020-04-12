@@ -1,0 +1,62 @@
+<div class="dashboard-container">
+    <div class="row">
+        <div class="col-md-3 side-bar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-md-9 right-content">
+            <!-- Right Panel -->
+            <div id="right-panel" class="right-panel">
+                <app-navbar></app-navbar>
+                <app-breadcrumbs></app-breadcrumbs>
+                <div class="container">
+                    <app-attsearch></app-attsearch>
+                    <div class="vol-rep-table">
+                        <div class="table-responsive">
+                            <table class="main-table mange-member table table-bordered text-center" BORDERCOLOR=RED>
+                                <tr>
+                                    <td class="location">Location</td>
+                                    <td class="volunteers">Volunteers</td>
+                                    <td class="present">Present</td>
+                                    <td class="absent">Absent</td>
+                                    <td class="options">Options</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="fullLocation">
+                                            <h4 class="h4-intable">Dubi City Mall </h4>
+                                            <h5 class="country-u-h4">United Arab Emirates</h5>
+                                        </div>
+                                        <a href="#" class="locMap">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <h5 >Required : <span class="reqCount">100</span></h5>
+                                        <h5 >Volunteers : <span class="volCount">40</span></h5>
+                                    </td>
+                                    <td>
+                                        <span >50</span>
+                                    </td>
+                                    <td>
+                                        <span >30</span>
+                                    </td>
+                                    <td>
+                                        <a href="#" routerLink='/EditAttendance' class="btn edit-option">
+                                            <i class="far fa-edit"></i>Edit
+                                        </a>
+                                    </td>
+                                </tr>		
+                            </table>
+                        </div>
+                        <a href="#" class='btn btn-primary exbut'><i class="fas fa-download"></i>Export</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
