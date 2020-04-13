@@ -8,7 +8,7 @@ import { User } from '../_models';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
-    baseUrl = "http://ramadan.talentohr.net/api";
+    baseUrl = "https://ramadan.talentohr.net/api";
 
     private currentUserSubject: BehaviorSubject<any>;
     public currentUser: Observable<User>;
