@@ -8,7 +8,7 @@ import { Observable } from  'rxjs';
 })
 export class ApiService {
 
-  PHP_API_SERVER = 'http://ramadan.talentohr.net';
+  PHP_API_SERVER = 'https://ramadan.talentohr.net';
 
   token:string;
 
